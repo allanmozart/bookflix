@@ -1,39 +1,109 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
 body {
-  /* background:  no-repeat center center/cover; */
-  background-image: radial-gradient(rgba(0, 0, 0, 0.325) 5%, black 95%),
+  background: no-repeat center center/cover;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.325), black 85%),
     url("../../assets/bgBookflix3D.jpg");
   width: 100%;
   height: 100vh;
   position: relative;
 }
 
+.navbar {
+  margin: 0 10%;
+}
+
+.buttonSingIn {
+  margin-left: 90%;
+}
+
+.logo {
+  height: 7vh;
+}
+
 .button {
+  height: 33px;
+  background: rgb(229, 9, 20);
   text-decoration: none;
   color: white;
+  font-family: "Paytone One", sans-serif;
+  border-radius: 4px;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+
+.button:hover {
+  background-color: rgb(193, 9, 18);
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 12%;
 }
 
 .mainContentRow {
+  min-width: 600px;
   text-align: center;
   color: aliceblue;
-  font-family: "Bebas Neue", sans-serif;
+}
 
+.mainContentRowform {
+  width: 600px;
+}
+
+.formCol {
+  padding: 0 4px;
+  margin: auto;
+}
+
+.formCol .button {
+  width: 200px;
+  font-size: 150%;
+  font-weight: 600;
+  min-height: 3.5rem;
+  padding: 14px 23px;
+}
+
+h1 {
+  flex-wrap: wrap;
+  font-family: "Paytone One", sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  display: block;
+  margin: 11px 0;
 }
 
 p {
-    font-size: 1.5rem;
-    font-weight: 400;
+  flex-wrap: wrap;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: "Helvetica", sans-serif;
+}
+
+.pSubscribe {
+  font-size: 20px;
+  margin-top: 8px;
 }
 
 .inputEmail {
   padding: 1.5rem 1rem 0.5rem;
   width: 100%;
+  height: 56px;
   font-size: 15px;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(0, 0, 0, 0.459);
   color: inherit;
+}
+
+input[type="email" i] {
+  padding-block: 1px;
+  padding-inline: 15px;
+  font: inherit;
+  font-weight: 600;
 }
 
 ::placeholder {
