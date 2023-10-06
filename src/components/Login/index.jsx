@@ -1,7 +1,5 @@
-// src/components/Login.js
-
 import { useState } from 'react';
-import { Button, Form, FormGroup, Input, LoginContainer, Title } from './style';
+import { Button, Form, Input, LoginContainer, Title } from './style';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -25,23 +23,19 @@ function Login() {
     <LoginContainer>
       <Title>Login</Title>
       <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </FormGroup>
-        <Button type="submit">Login</Button>
+        <Input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <Input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <Button>Login</Button>
       </Form>
     </LoginContainer>
   );

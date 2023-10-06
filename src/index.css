@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.325) 10%, black 95%),
+  background-image: radial-gradient(rgba(0, 0, 0, 0.243), black),
     url('../../public/bgBookflix3D.jpg');
 }
 

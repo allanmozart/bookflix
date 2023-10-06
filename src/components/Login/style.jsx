@@ -6,7 +6,6 @@ export const LoginContainer = styled.div`
   margin: 0 auto;
   padding: 65px;
   background: rgba(0, 0, 0, 0.7);
-
   border-radius: 1%;
 `;
 
@@ -20,11 +19,8 @@ export const Form = styled.form`
   flex-direction: column;
 `;
 
-export const FormGroup = styled.div`
-  margin-bottom: 15px;
-`;
-
 export const Input = styled.input`
+  margin-top: 15px;
   padding: 10px;
   background: rgba(61, 61, 61);
   color: white;
