@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, Form, Input, LoginContainer, Title } from './style';
+import { login } from '../../requests/auth/login';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -15,8 +16,8 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    login(email, password);
   };
 
   return (
