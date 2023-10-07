@@ -30,7 +30,7 @@ export function LandingPage() {
         </Paragraph>
         <EmailContainer>
           <EmailInput type="email" placeholder="Type your e-mail"></EmailInput>
-          <DefaultButton heightSize={'55px'} fontSize={'35px'} to="/register">
+          <DefaultButton heightSize={'55px'} fontSize={'25px'} to="/register">
             Subscribe
           </DefaultButton>
         </EmailContainer>
