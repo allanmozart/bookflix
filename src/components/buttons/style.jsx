@@ -10,7 +10,7 @@ export const DefaultButton = styled(Link)`
   border-radius: 4px;
   width: auto;
   font-size: ${({ fontSize }) => fontSize || '14px'};
-  font-weight: 600;
+  font-weight: 400;
   padding: 0px 15px;
   display: flex;
   justify-content: center;

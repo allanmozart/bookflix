@@ -18,7 +18,7 @@ export const Title = styled.h1`
   color: white;
   flex-wrap: wrap;
   font-family: 'Paytone One', sans-serif;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 48px;
   display: block;
   margin: 80px 0 0 0;
