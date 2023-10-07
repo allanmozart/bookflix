@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Button, Form, Input, LoginContainer, Title } from './style';
-import { login } from '../../requests/auth/login';
+import { verifyUser } from '../../requests/auth/login';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [profile, setProfile] = useState(null);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -14,10 +15,15 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    login(email, password);
+    try {
+      const response = await verifyUser(email, password);
+      setProfile(response);
+      console.log(profile);
+    } catch (error) {
+      console.error('Erro ao verificar usuário:', error);
+    }
   };
 
   return (
