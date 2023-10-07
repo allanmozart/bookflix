@@ -39,4 +39,8 @@ export const EmailContainer = styled.div`
   align-items: center;
   margin: 20px;
   gap: 10px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `;

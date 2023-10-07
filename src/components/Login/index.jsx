@@ -19,18 +19,14 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await verifyUser(email, password);
-      setProfile(response);
+
+    const response = await verifyUser(email, password);
+    if (response?.message === 'OK') {
+      setMessage('Login sucessful');
+      setProfile(response.data);
       console.log(profile);
-      if (response?.message === 'OK') {
-        setMessage('Login sucessful');
-      } else {
-        setMessage('Login failed');
-      }
-    } catch (error) {
-      console.error('Erro ao verificar usuário:', error.message);
-      setMessage('Invalid credentials');
+    } else {
+      setMessage('Login failed');
     }
   };
 
