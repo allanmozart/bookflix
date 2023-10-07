@@ -7,7 +7,7 @@ export async function verifyUser(email, password) {
       email,
       password,
     })
-    .then((response) => response.data.data)
+    .then((response) => (response.data ? response.data : response))
     .catch((e) => console.error(e));
 
   return profile;

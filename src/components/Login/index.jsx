@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Button, Form, Input, LoginContainer, Title } from './style';
 import { verifyUser } from '../../requests/auth/login';
+import { Paragraph } from '../../pages/LoginPage/style';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [profile, setProfile] = useState(null);
+  const [message, setMessage] = useState(null);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -21,8 +23,14 @@ function Login() {
       const response = await verifyUser(email, password);
       setProfile(response);
       console.log(profile);
+      if (response?.message === 'OK') {
+        setMessage('Login sucessful');
+      } else {
+        setMessage('Login failed');
+      }
     } catch (error) {
-      console.error('Erro ao verificar usuário:', error);
+      console.error('Erro ao verificar usuário:', error.message);
+      setMessage('Invalid credentials');
     }
   };
 
@@ -43,6 +51,7 @@ function Login() {
           onChange={handlePasswordChange}
         />
         <Button>Login</Button>
+        <Paragraph>{message || null}</Paragraph>
       </Form>
     </LoginContainer>
   );
