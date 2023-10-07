@@ -21,7 +21,7 @@ export const Title = styled.h1`
   font-weight: 900;
   font-size: 48px;
   display: block;
-  margin: 11px 0;
+  margin: 80px 0 0 0;
 `;
 
 export const LadingPage = styled.div`
