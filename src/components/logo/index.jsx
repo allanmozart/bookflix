@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Logo = styled.img`
-  height: 7vh;
+  height: 6vh;
 `;
