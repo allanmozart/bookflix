@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Page = styled.div`
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
   height: 100%;
 `;
 
