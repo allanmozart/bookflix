@@ -9,7 +9,7 @@ import { MainHeader } from '../../components/MainHeader';
 import { DefaultButton } from '../../components/Buttons/style';
 import { EmailInput } from '../../components/Input';
 import { Link } from 'react-router-dom';
-import { Logo } from '../../components/logo';
+import { Logo } from '../../components/Logo';
 
 export function LandingPage() {
   return (

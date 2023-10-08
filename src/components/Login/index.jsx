@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [profile, setProfile] = useState(null);
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
 
@@ -23,13 +22,13 @@ function Login() {
     e.preventDefault();
 
     const response = await verifyUser(email, password);
+    console.log(response.data.message);
+    setMessage(response.data.message);
     if (response?.message === 'OK') {
-      setMessage('Login sucessful');
-      setProfile(response.data.data);
-      console.log(profile);
-      navigate('/catalog');
-    } else {
-      setMessage('Login failed');
+      console.log(response.data);
+      setTimeout(() => {
+        navigate('/catalog');
+      }, 2000);
     }
   };
 

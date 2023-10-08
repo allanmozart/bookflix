@@ -2,13 +2,13 @@ import axios from 'axios';
 import { loginUrl } from '../../helpers/urls';
 
 export async function verifyUser(email, password) {
-  const profile = axios
-    .post(loginUrl, {
+  try {
+    const response = await axios.post(loginUrl, {
       email,
       password,
-    })
-    .then((response) => (response.data ? response.data : response))
-    .catch((e) => console.error(e));
-
-  return profile;
+    });
+    return { message: 'OK', data: response.data };
+  } catch (error) {
+    return { message: 'Error occurred', data: error.response.data };
+  }
 }

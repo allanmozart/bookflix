@@ -1,7 +1,7 @@
 import { MainHeader } from '../../components/MainHeader';
 import { Page } from './style';
 import { Link, useNavigate } from 'react-router-dom';
-import { Logo } from '../../components/logo';
+import { Logo } from '../../components/Logo';
 import { Paragraph } from './style';
 
 const RequireAuth = () => {
@@ -25,7 +25,7 @@ export default function CatalogPage() {
         </Link>
       </MainHeader>
       <Page>
-        <Paragraph>CATALOG</Paragraph>
+        <Paragraph>Catalog</Paragraph>
       </Page>
     </>
   );
