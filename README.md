@@ -2,8 +2,7 @@
 
 # Bookflix
 
-This project it was developed during the Mindera Frontend Bootcamp at 2023 with the following group members @aldaoliveira35 @allanmozart @ca-trindade @devCesarRamos @brunomachadors @tatianataketsumaMindera and @kaybonne
-
+This project it was developed during the Mindera Frontend Bootcamp at 2023.
 The idea it's to create a page inspired on Netflix layout but interacting with book API.
 
 ## How to run
@@ -23,7 +22,13 @@ yarn dev
 
 ## Team Members
 
-@aldaoliveira35 @allanmozart @ca-trindade @devCesarRamos @brunomachadors @tatianataketsumaMindera and @kaybonne
+- [Alda Oliveira](https://github.com/aldaoliveira35)
+- [Allan Mozart](https:github.com/allanmozart)
+- [Carla Trindade](https:github.com/ca-trindade)
+- [Cesar Ramos](https:github.com/devCesarRamos)
+- [Bruno Machado](https://github.com/brunomachadors)
+- [Tatiana Taketsuuma](https://github.com/tatianataketsumaMindera) 
+- [Rui Carvalho](https://github.com/kaybonne)
 
 # React + Vite
 
