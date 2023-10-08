@@ -23,11 +23,11 @@ yarn dev
 ## Team Members
 
 - [Alda Oliveira](https://github.com/aldaoliveira35)
-- [Allan Mozart](https:github.com/allanmozart)
-- [Carla Trindade](https:github.com/ca-trindade)
-- [Cesar Ramos](https:github.com/devCesarRamos)
+- [Allan Mozart](https://github.com/allanmozart)
+- [Carla Trindade](https://github.com/ca-trindade)
+- [Cesar Ramos](https://github.com/devCesarRamos)
 - [Bruno Machado](https://github.com/brunomachadors)
-- [Tatiana Taketsuuma](https://github.com/tatianataketsumaMindera) 
+- [Tatiana Taketsuuma](https://github.com/tatianataketsumaMindera)
 - [Rui Carvalho](https://github.com/kaybonne)
 
 # React + Vite
