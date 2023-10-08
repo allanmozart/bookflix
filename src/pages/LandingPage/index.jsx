@@ -9,7 +9,7 @@ import { MainHeader } from '../../components/MainHeader';
 import { DefaultButton } from '../../components/Buttons/style';
 import { EmailInput } from '../../components/Input';
 import { Link } from 'react-router-dom';
-import { Logo } from '../../components/logo';
+import { Logo } from '../../components/Logo';
 
 export function LandingPage() {
   return (
@@ -32,8 +32,12 @@ export function LandingPage() {
           Ready to read? Enter your email to create or restart your membership.
         </Paragraph>
         <EmailContainer>
-          <EmailInput type="email" placeholder="Type your e-mail"></EmailInput>
-          <DefaultButton heightSize={'55px'} fontSize={'35px'} to="/register">
+          <EmailInput
+            type="email"
+            placeholder="Type your e-mail"
+            id="emailInput"
+          ></EmailInput>
+          <DefaultButton height={'55px'} size={'25px'} to="/register">
             Subscribe
           </DefaultButton>
         </EmailContainer>

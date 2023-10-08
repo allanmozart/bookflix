@@ -1,14 +1,23 @@
 import { MainHeader } from '../../components/MainHeader';
-import Login from '../../components/Login';
 import { Page } from './style';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
+import { Paragraph } from './style';
 
-export default function LoginPage() {
+const RequireAuth = () => {
+  const navitgate = useNavigate();
+  if (this.user !== null) {
+    navitgate('/');
+  }
+};
+
+export default function CatalogPage() {
+  RequireAuth;
+
   return (
     <>
       <MainHeader>
-        <Link to="/">
+        <Link to="/catalog">
           <Logo
             src="https://fontmeme.com/permalink/231005/1bf0ab08da7c21a3ed063a6277666c66.png"
             alt="Bookflix Logo"
@@ -16,7 +25,7 @@ export default function LoginPage() {
         </Link>
       </MainHeader>
       <Page>
-        <Login></Login>
+        <Paragraph>Catalog</Paragraph>
       </Page>
     </>
   );

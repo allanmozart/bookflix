@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPage from '../LoginPage';
 import { LandingPage } from '../LandingPage';
+import CatalogPage from '../catalogPage';
 
 const App = () => {
   return (
@@ -9,6 +10,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" />
+        <Route path="/catalog" element={<CatalogPage />} />
       </Routes>
     </BrowserRouter>
   );

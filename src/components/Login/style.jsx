@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 // Styled components for your login form
 export const LoginContainer = styled.div`
+  margin-top: 80px;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 75 auto;
   padding: 65px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 1%;
@@ -33,6 +34,7 @@ export const Button = styled.button`
   color: #fff;
   border: none;
   border-radius: 4px;
+  font-family: sans-serif;
   cursor: pointer;
 
   &:hover {
