@@ -1,21 +1,14 @@
 import { MainHeader } from '../../components/MainHeader';
 import { Page } from './style';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
 import { Paragraph } from './style';
-
-const RequireAuth = () => {
-  const navitgate = useNavigate();
-  if (this.user !== null) {
-    navitgate('/');
-  }
-};
+import { RequireAuth } from '../../components/RequireAuth/RequireAuth';
 
 export default function CatalogPage() {
-  RequireAuth;
-
   return (
     <>
+      <RequireAuth /> {RequireAuth}
       <MainHeader>
         <Link to="/catalog">
           <Logo
