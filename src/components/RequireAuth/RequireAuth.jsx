@@ -5,8 +5,6 @@ import { useEffect } from 'react';
 export const RequireAuth = () => {
   const navigate = useNavigate();
   const token = getAuthToken();
-  console.log(token);
-
   useEffect(() => {
     if (token === null) {
       navigate('/login');

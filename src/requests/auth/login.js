@@ -17,7 +17,6 @@ export async function verifyUser(email, password) {
     });
 
     const token = response.data.data.token;
-    console.log('TOKEN' + token);
     setAuthToken(token);
     return { message: 'OK', data: response.data };
   } catch (error) {
