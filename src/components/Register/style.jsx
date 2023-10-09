@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const RegisterContainer = styled.div`
   margin-top: 80px;
-  max-width: 700px;
+  max-width: 50%;
   margin: 75 auto;
   padding: 65px;
   display: flex;
