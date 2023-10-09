@@ -19,6 +19,7 @@ yarn dev
 - [ ] Register
 - [ ] Profile
 - [ ] Catalog
+- [x] Security Login
 
 ## Team Members
 
