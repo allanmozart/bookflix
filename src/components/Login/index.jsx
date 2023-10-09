@@ -22,7 +22,6 @@ function Login() {
     e.preventDefault();
 
     const response = await verifyUser(email, password);
-    console.log(response.data.message);
     setMessage(response.data.message);
     if (response?.message === 'OK') {
       console.log(response.data);
