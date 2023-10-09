@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const RegisterContainer = styled.div`
   margin-top: 80px;
@@ -60,4 +60,23 @@ export const Button = styled.button`
   &:hover {
     background-color: #790505;
   }
+`;
+
+export const RegisterStatus = styled.div`
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: transparent;
+  width: 400px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const RegisterErrors = styled.ul`
+  list-style-type: none;
+  margin-bottom: 0px;
 `;
