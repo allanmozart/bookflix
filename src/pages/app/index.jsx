@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import LoginPage from '../LoginPage';
-import { LandingPage } from '../LandingPage';
-import CatalogPage from '../catalogPage';
-import RegisterPage from '../RegisterPage';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import LoginPage from "../LoginPage";
+import { LandingPage } from "../LandingPage";
+import CatalogPage from "../catalogPage";
+import { ErrorPage } from "../error";
+import RegisterPage from "../RegisterPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
