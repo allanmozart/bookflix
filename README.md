@@ -3,7 +3,7 @@
 # Bookflix
 
 This project it was developed during the Mindera Frontend Bootcamp at 2023.
-The idea it's to create a page inspired on Netflix layout but interacting with book API.
+The idea is to create a page inspired on Netflix layout but interacting with a book API.
 
 ## How to run
 
