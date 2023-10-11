@@ -16,7 +16,7 @@ yarn dev
 
 - [x] Landing Page
 - [x] Login
-- [ ] Register
+- [x] Register
 - [ ] Profile
 - [ ] Catalog
 - [x] Security Login

@@ -23,6 +23,7 @@ function Login() {
 
     const response = await verifyUser(email, password);
     setMessage(response.data.message);
+
     if (response?.message === 'OK') {
       console.log(response.data);
       setTimeout(() => {
@@ -50,8 +51,8 @@ function Login() {
           onChange={handlePasswordChange}
         />
         <Button>Login</Button>
-        <Paragraph>{message || null}</Paragraph>
       </Form>
+      <Paragraph>{message || null}</Paragraph>
     </LoginContainer>
   );
 }
