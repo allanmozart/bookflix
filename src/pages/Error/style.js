@@ -5,11 +5,11 @@ export const ErrorPageBg = styled.div`
   height: 100vh;
   position: absolute;
   background: no-repeat center center/cover;
-  background-image: url("../../assets/bgBookflixError.jpg");
+  background-image: url("/src/assets/errorBg.jpg");
 `;
 
 export const Title = styled.h1`
-width: 35%;
+  width: 35%;
   color: white;
   flex-wrap: wrap;
   font-family: "Paytone One", sans-serif;

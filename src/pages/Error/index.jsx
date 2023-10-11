@@ -1,8 +1,8 @@
-import { MainHeader } from "../../components/MainHeader";
+import { Paragraph, Title } from "./style";
 import { Link } from "react-router-dom";
 import { Logo } from "../../components/Logo";
-import { Paragraph, Title } from "./style";
 import { ErrorPageBg } from "./style";
+import { MainHeader } from "../../components/MainHeader";
 import { DefaultButton } from "../../components/Buttons/style";
 
 export function ErrorPage() {
