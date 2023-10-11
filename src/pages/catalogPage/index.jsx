@@ -2,7 +2,7 @@ import { MainHeader } from '../../components/MainHeader';
 import { Page } from './style';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
-import  Catalog  from '../../components/Catalog' 
+import Catalog from '../../components/Catalog';
 
 export default function catalogPage() {
   return (
