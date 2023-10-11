@@ -12,6 +12,7 @@ import {
   RegisterErrors,
 } from "./style";
 import { register } from "../../requests/auth/register";
+import { verifyUser } from "../../requests/auth/login";
 
 export function Register() {
   const [email, setEmail] = useState("");
@@ -20,19 +21,34 @@ export function Register() {
   const navigate = useNavigate();
   const [registrationStatus, setRegistrationStatus] = useState([]);
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await register({ name, email, password });
-    if (response.message === "OK") {
+    const registrationResponse = await register({ name, email, password });
+    if (registrationResponse.message === "OK") {
       setRegistrationStatus({ status: "success" });
-      setTimeout(() => {
-        navigate("/Login");
-      }, 2000);
+      const loginResponse = await verifyUser(email, password);
+      if (loginResponse.message === "OK") {
+        setTimeout(() => {
+          navigate("/Catalog");
+        }, 2000);
+      }
     } else {
       setRegistrationStatus({
         status: "error",
-        errors: response.data,
+        errors: registrationResponse.data,
       });
     }
   };
@@ -49,7 +65,7 @@ export function Register() {
             value={name}
             type="text"
             placeholder="Enter your name"
-            onChange={(event) => setName(event.target.value)}
+            onChange={handleNameChange}
             required
           ></Input>
         </InputContainer>
@@ -61,7 +77,7 @@ export function Register() {
             value={email}
             type="email"
             placeholder="Enter your e-mail"
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={handleEmailChange}
             required
           ></Input>
         </InputContainer>
@@ -72,13 +88,15 @@ export function Register() {
             value={password}
             type="password"
             placeholder="Enter your password"
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={handlePasswordChange}
             required
           ></Input>
         </InputContainer>
         <Button>Register</Button>
         {registrationStatus.status === "success" && (
-          <RegisterStatus>Registration completed!</RegisterStatus>
+          <RegisterStatus>
+            Registration completed. Welcome to Bookflix!
+          </RegisterStatus>
         )}
         {registrationStatus.status === "error" && (
           <div>
