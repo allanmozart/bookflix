@@ -15,7 +15,7 @@ import { register } from "../../requests/auth/register";
 import { verifyUser } from "../../requests/auth/login";
 
 export function Register() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(new URLSearchParams(document.location.search).get("email"));
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const navigate = useNavigate();
