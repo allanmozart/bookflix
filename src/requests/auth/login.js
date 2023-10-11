@@ -18,9 +18,9 @@ export async function verifyUser(email, password) {
 
     const token = response.data.data.token;
     setAuthToken(token);
-    return { message: 'OK', data: response.data };
+    return { message: 'OK', data: response?.data };
   } catch (error) {
-    return { message: 'Error occurred', data: error.response.data };
+    return { message: 'Error occurred', data: error.response?.data };
   }
 }
 
