@@ -31,7 +31,7 @@ export default function CatalogPage() {
       </MainHeader>
 
       <Page>
-        <Catalog></Catalog>
+        <Catalog />
       </Page>
     </>
   );
