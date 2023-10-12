@@ -5,23 +5,33 @@ export const CatalogContainer = styled.div`
   font-family: Arial, sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;
 `;
 
 export const BookList = styled.ul`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
   list-style: none;
   padding: 0;
+  margin: 0;
 `;
 
 export const BookItem = styled.li`
   color: white;
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
+  margin: 13px;
+  padding: 15px 0;
+  border: 1px solid rgba(200, 200, 200, 0.3);
   border-radius: 5px;
-  background-color: transparent #f9f9f9;
+  background-color: transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 50%;
+  width: 30%;
+
+  &:hover {
+    background-color: rgba(200, 200, 200, 0.4);
+
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -36,6 +46,10 @@ export const Paragraph = styled.p`
 `;
 
 export const BookCover = styled.img`
-  width: 45%;
-  height: 60%;
+  width: 28%;
+
+  &:hover {
+    width: 29%;
+
+  }
 `;

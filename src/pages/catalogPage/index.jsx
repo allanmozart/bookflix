@@ -31,7 +31,7 @@ export default function CatalogPage() {
       </MainHeader>
       <Paragraph>{userData.name}</Paragraph>
       <Page>
-        <Catalog></Catalog>
+        <Catalog />
       </Page>
     </>
   );
