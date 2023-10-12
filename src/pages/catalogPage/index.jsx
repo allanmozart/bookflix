@@ -16,7 +16,7 @@ export default function catalogPage() {
         </Link>
       </MainHeader>
       <Page>
-        <Catalog></Catalog>
+        <Catalog />
       </Page>
     </>
   );

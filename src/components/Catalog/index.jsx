@@ -42,7 +42,7 @@ export default function Catalog() {
             {Array.isArray(books) && books.length > 0 ? (
               books.map((book) => (
                 <BookItem key={book.id}>
-                  <h2>{book.title}</h2>
+                  <h2 style={{ fontSize: "145%" }}>{book.title}</h2>
                   <p>Year: {book.year}</p>
                   <p>Description: {book.description}</p>
                   <BookCover
