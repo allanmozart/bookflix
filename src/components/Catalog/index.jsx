@@ -1,6 +1,6 @@
 import { RequireAuth } from '../RequireAuth/RequireAuth';
 import { useState, useEffect } from 'react';
-import { bookUrl } from '../../helpers/urls';
+import { bookUrl } from '../../utils/urls';
 import {
   BookList,
   BookItem,

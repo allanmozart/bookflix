@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Form, Input, LoginContainer, Title } from './style';
-import { verifyUser } from '../../requests/auth/login';
+import { verifyUser } from '../../api/auth/login';
 import { Paragraph } from '../../pages/LoginPage/style';
 import { useNavigate } from 'react-router-dom';
 

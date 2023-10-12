@@ -1,13 +1,13 @@
-import axios from "axios";
-import { registerUrl } from "../../helpers/urls";
+import axios from 'axios';
+import { registerUrl } from '../../utils/urls';
 
 export async function register({ name, email, password }) {
   try {
     const response = await axios.post(registerUrl, { name, email, password });
-    return { message: "OK", data: response.data };
+    return { message: 'OK', data: response.data };
   } catch (error) {
     return {
-      message: "Error occurred",
+      message: 'Error occurred',
       data: error.response.data.errors,
     };
   }

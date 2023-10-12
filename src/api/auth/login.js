@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { loginUrl } from '../../helpers/urls';
+import { loginUrl } from '../../utils/urls';
 
 function setAuthToken(token) {
   localStorage.setItem('authToken', token);

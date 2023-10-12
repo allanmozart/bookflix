@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Icon } from "../Icons/style";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Icon } from '../Icons/style';
 import {
   Button,
   Form,
@@ -10,14 +10,16 @@ import {
   Title,
   RegisterStatus,
   RegisterErrors,
-} from "./style";
-import { register } from "../../requests/auth/register";
-import { verifyUser } from "../../requests/auth/login";
+} from './style';
+import { register } from '../../api/auth/register';
+import { verifyUser } from '../../api/auth/login';
 
 export function Register() {
-  const [email, setEmail] = useState(new URLSearchParams(document.location.search).get("email"));
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState(
+    new URLSearchParams(document.location.search).get('email')
+  );
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const navigate = useNavigate();
   const [registrationStatus, setRegistrationStatus] = useState([]);
 
@@ -37,17 +39,17 @@ export function Register() {
     event.preventDefault();
 
     const registrationResponse = await register({ name, email, password });
-    if (registrationResponse.message === "OK") {
-      setRegistrationStatus({ status: "success" });
+    if (registrationResponse.message === 'OK') {
+      setRegistrationStatus({ status: 'success' });
       const loginResponse = await verifyUser(email, password);
-      if (loginResponse.message === "OK") {
+      if (loginResponse.message === 'OK') {
         setTimeout(() => {
-          navigate("/Catalog");
+          navigate('/Catalog');
         }, 2000);
       }
     } else {
       setRegistrationStatus({
-        status: "error",
+        status: 'error',
         errors: registrationResponse.data,
       });
     }
@@ -93,12 +95,12 @@ export function Register() {
           ></Input>
         </InputContainer>
         <Button>Register</Button>
-        {registrationStatus.status === "success" && (
+        {registrationStatus.status === 'success' && (
           <RegisterStatus>
             Registration completed. Welcome to Bookflix!
           </RegisterStatus>
         )}
-        {registrationStatus.status === "error" && (
+        {registrationStatus.status === 'error' && (
           <div>
             <RegisterStatus>
               The register has failed due to:
