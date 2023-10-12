@@ -1,6 +1,6 @@
+import { useEffect } from 'react';
 import { RequireAuth } from '../RequireAuth/RequireAuth';
-import { useState, useEffect } from 'react';
-import { bookUrl } from '../../helpers/urls';
+import getBooks from '../../requests/auth/books';
 import {
   BookList,
   BookItem,
@@ -8,25 +8,13 @@ import {
   Paragraph,
   BookCover,
 } from './style';
-import axios from 'axios';
+
 
 export default function Catalog() {
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { books, loading } = getBooks();
 
   useEffect(() => {
-    axios
-      .get(bookUrl)
-      .then((response) => {
-        setBooks(response.data.data);
-        console.log(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching books:', error);
-        setLoading(false);
-      });
-  }, []);
+  }, [books]);
 
   if (loading) {
     return <Paragraph>Loading...</Paragraph>;
