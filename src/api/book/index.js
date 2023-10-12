@@ -17,3 +17,13 @@ export async function insertBook(title, description, year, bookCover) {
     };
   }
 }
+
+export default async function getBooks() {
+  try {
+    const response = await axios.get(bookUrl);
+
+    return { books: response.data.data, loading: false };
+  } catch (error) {
+    console.error('Error fetching books:', error);
+  }
+}
