@@ -3,6 +3,7 @@ import { Page } from './style';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
 import Catalog from '../../components/Catalog';
+import { DefaultButton } from '../../components/Buttons/style';
 
 export default function catalogPage() {
   return (
@@ -14,7 +15,14 @@ export default function catalogPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
+        <DefaultButton style={{ margin: '10px' }} to="/newbook">
+          Insert New book
+        </DefaultButton>
+        <DefaultButton style={{ margin: '10px' }} to="/login">
+          Logout
+        </DefaultButton>
       </MainHeader>
+
       <Page>
         <Catalog></Catalog>
       </Page>

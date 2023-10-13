@@ -29,10 +29,10 @@ export default function NewBook() {
   return (
     <NewBookContainter>
       <Form onSubmit={handleSubmit}>
-        <Title>Insert new book</Title>
-        <Input placeholder="Insert Book Title" />
+        <Title>New Book Info</Title>
+        <Input placeholder="Type Book Title" />
         <TextArea
-          placeholder="Insert Book Description"
+          placeholder="Type Book Description"
           value={description}
           onChange={handleDescriptionChange}
         />

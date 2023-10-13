@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // Styled components for your login form
 export const NewBookContainter = styled.div`
   margin-top: 80px;
-  max-width: 50%;
+  max-width: 70%;
   margin: 75 auto;
   padding: 65px;
   display: flex;
@@ -32,7 +32,7 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 10px;
 
   background-color: #00000094;
@@ -66,9 +66,9 @@ export const Button = styled.button`
 export const TextArea = styled.textarea`
   margin-top: 15px;
   padding: 10px;
-
   background-color: #00000094;
   width: 400px;
+  height: 150px;
   color: white;
   border: 1px solid white;
   text-align: center;
