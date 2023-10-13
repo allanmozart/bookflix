@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react';
 import { RequireAuth } from '../RequireAuth/RequireAuth';
-import getBooks from '../../api/book'; // Import your getBooks function
-import {
-  BookList,
-  BookItem,
-  CatalogContainer,
-  Paragraph,
-  BookCover,
-} from './style';
+import getBooks from '../../api/book';
+import { BookList, BookItem, CatalogContainer, BookCover } from './style';
 
 export default function Catalog() {
   const [books, setBooks] = useState([]);
@@ -16,7 +10,7 @@ export default function Catalog() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const bookData = await getBooks(); // Call your getBooks function
+        const bookData = await getBooks();
         setBooks(bookData.books);
         setLoading(false);
       } catch (error) {
@@ -31,7 +25,7 @@ export default function Catalog() {
   return (
     <CatalogContainer>
       <RequireAuth />
-      <Paragraph>Catalog</Paragraph>
+
       {loading ? (
         <p>Loading...</p>
       ) : (

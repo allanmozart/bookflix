@@ -9,6 +9,7 @@ export const NewBookContainter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const Title = styled.h1`
@@ -76,4 +77,17 @@ export const TextArea = styled.textarea`
   &::placeholder {
     color: #ffffffb1;
   }
+`;
+
+export const Paragraph = styled.p`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  font-size: 30px;
+  font-weight: 400;
+  max-width: 400px;
+  font-family: 'Helvetica', sans-serif;
+  color: white;
 `;
