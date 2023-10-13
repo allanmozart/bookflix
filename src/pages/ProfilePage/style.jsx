@@ -30,4 +30,5 @@ export const ProfileList = styled.ul`
   flex-direction: row;
   list-style-type: none;
   text-align: center;
+  justify-content: center;
 `;

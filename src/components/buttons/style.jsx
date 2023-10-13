@@ -38,7 +38,7 @@ export const SelectProfileButton = styled(Link)`
   text-decoration: none;
 `;
 
-export const AddProfileBtn = styled(Link)`
+export const AddProfileBtn = styled.button`
   height: 10vw;
   max-height: 200px;
   max-width: 200px;
@@ -47,13 +47,18 @@ export const AddProfileBtn = styled(Link)`
   width: 10vw;
   display: flex;
   background-image: url("../../assets/plus-button-icon.jpg");
-  /* background-repeat: no-repeat; */
+  background-color: #292525;
   background-size: cover; 
   border-radius: 4px;
   position: relative;
   text-decoration: none;
   justify-content: center;
   align-items: center;
+  border-style: none;
+
+  &:hover{
+    background-color: #696969;
+  }
 `;
 
 

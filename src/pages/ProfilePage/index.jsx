@@ -1,6 +1,9 @@
-import { MainHeader } from "../../components/MainHeader";
 import { Link } from "react-router-dom";
+
+import { MainHeader } from "../../components/MainHeader";
 import { Logo } from "../../components/Logo";
+import { SelectProfileModal } from "../../components/Modal";
+
 import { Page, Title, Paragraph, ProfileList } from "./style";
 import {
   AddProfileBtn,
@@ -8,9 +11,7 @@ import {
 } from "../../components/buttons/style";
 
 export default function ProfilePage() {
-  const handleAddProfile = () =>{
-
-  }
+  const handleAddProfile = () => {};
   return (
     <>
       <MainHeader>
@@ -22,19 +23,22 @@ export default function ProfilePage() {
         </Link>
       </MainHeader>
       <Page>
-        {/* <div> */}
-          <Title>Who's Reading?</Title>
-          <ProfileList>
-            <li>
-              <SelectProfileButton style={{ marginRight: "10px" }} />
-              <Paragraph style={{ fontSize: "14px" }}>Allan</Paragraph>
-            </li>
-            <li>
-              <AddProfileBtn/>
-              <Paragraph style={{ fontSize: "14px" }}>Add Profile</Paragraph>
-            </li>
-          </ProfileList>
-        {/* </div> */}
+        <div>
+          <div>
+            <Title>Who's Reading?</Title>
+            <ProfileList>
+              <li>
+                <SelectProfileButton style={{ marginRight: "10px" }} />
+                <Paragraph style={{ fontSize: "14px" }}>Allan</Paragraph>
+              </li>
+              <li>
+                <AddProfileBtn />
+                <Paragraph style={{ fontSize: "14px" }}>Add Profile</Paragraph>
+              </li>
+            </ProfileList>
+          </div>
+          <SelectProfileModal></SelectProfileModal>
+        </div>
       </Page>
     </>
   );
