@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { loginUrl } from '../../helpers/urls';
+import { ENDPOINT } from '../../utils/urls';
 
 function setAuthToken(token) {
   localStorage.setItem('authToken', token);
@@ -11,7 +11,7 @@ export function getAuthToken() {
 
 export async function verifyUser(email, password) {
   try {
-    const response = await axios.post(loginUrl, {
+    const response = await axios.post(ENDPOINT.login, {
       email,
       password,
     });

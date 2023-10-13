@@ -1,13 +1,13 @@
-import { MainHeader } from '../../components/MainHeader';
-import { Page } from './style';
-import { Link } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
-import Catalog from '../../components/Catalog';
+import { MainHeader } from '../../components/MainHeader';
+import { Link } from 'react-router-dom';
+import { Page } from './style';
+import NewBook from '../../components/NewBook';
 import { DefaultButton } from '../../components/Buttons/style';
 
-export default function catalogPage() {
+export default function NewBookPage() {
   return (
-    <>
+    <Page>
       <MainHeader>
         <Link to="/">
           <Logo
@@ -15,17 +15,11 @@ export default function catalogPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
-        <DefaultButton style={{ margin: '10px' }} to="/newbook">
-          Insert New book
-        </DefaultButton>
         <DefaultButton style={{ margin: '10px' }} to="/login">
           Logout
         </DefaultButton>
       </MainHeader>
-
-      <Page>
-        <Catalog></Catalog>
-      </Page>
-    </>
+      <NewBook></NewBook>
+    </Page>
   );
 }

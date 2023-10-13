@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { getAuthToken } from '../../requests/auth/login';
+import { getAuthToken } from '../../api/auth/login';
 import { useEffect } from 'react';
 
 export const RequireAuth = () => {

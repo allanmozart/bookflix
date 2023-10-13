@@ -1,50 +1,52 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { RequireAuth } from '../RequireAuth/RequireAuth';
-import getBooks from '../../requests/auth/books';
-import {
-  BookList,
-  BookItem,
-  CatalogContainer,
-  Paragraph,
-  BookCover,
-} from './style';
-
+import getBooks from '../../api/book';
+import { BookList, BookItem, CatalogContainer, BookCover } from './style';
 
 export default function Catalog() {
-  const { books, loading } = getBooks();
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  }, [books]);
+    async function fetchBooks() {
+      try {
+        const bookData = await getBooks();
+        setBooks(bookData.books);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+        setLoading(false);
+      }
+    }
 
-  if (loading) {
-    return <Paragraph>Loading...</Paragraph>;
-  } else {
-    return (
-      <CatalogContainer>
-        <RequireAuth />
-        <Paragraph>Catalog</Paragraph>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <BookList>
-            {Array.isArray(books) && books.length > 0 ? (
-              books.map((book) => (
-                <BookItem key={book.id}>
-                  <h2>{book.title}</h2>
-                  <p>Year: {book.year}</p>
-                  <p>Description: {book.description}</p>
-                  <BookCover
-                    src={book.book_cover}
-                    alt={`${book.title}cover`}
-                  ></BookCover>
-                </BookItem>
-              ))
-            ) : (
-              <p>No books available.</p>
-            )}
-          </BookList>
-        )}
-      </CatalogContainer>
-    );
-  }
+    fetchBooks();
+  }, []);
+
+  return (
+    <CatalogContainer>
+      <RequireAuth />
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <BookList>
+          {Array.isArray(books) && books.length > 0 ? (
+            books.map((book) => (
+              <BookItem key={book.id}>
+                <h2>{book.title}</h2>
+                <p>Year: {book.year}</p>
+                <p>Description: {book.description}</p>
+                <BookCover
+                  src={book.book_cover}
+                  alt={`${book.title} cover`}
+                ></BookCover>
+              </BookItem>
+            ))
+          ) : (
+            <p>No books available.</p>
+          )}
+        </BookList>
+      )}
+    </CatalogContainer>
+  );
 }
