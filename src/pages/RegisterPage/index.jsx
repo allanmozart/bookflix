@@ -7,7 +7,7 @@ export default function RegisterPage() {
     <>
       <Page>
         <Register></Register>
-        <LogoHuge src="../assets/icons8-netflix-480.svg"></LogoHuge>
+        <LogoHuge src="src/assets/icons8-netflix-480.svg"></LogoHuge>
       </Page>
     </>
   );

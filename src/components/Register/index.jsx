@@ -61,7 +61,7 @@ export function Register() {
         <Title>Read 100+ books,</Title>
         <Title>Join us now</Title>
         <InputContainer>
-          <Icon src="../assets/icons/user-16.png"></Icon>
+          <Icon src="src/assets/icons/user-16.png"></Icon>
           <Input
             id="registerName"
             value={name}
@@ -73,7 +73,7 @@ export function Register() {
         </InputContainer>
 
         <InputContainer>
-          <Icon src="../assets/icons/mail-16.png"></Icon>
+          <Icon src="src/assets/icons/mail-16.png"></Icon>
           <Input
             id="registerEmail"
             value={email}
@@ -84,7 +84,7 @@ export function Register() {
           ></Input>
         </InputContainer>
         <InputContainer>
-          <Icon src="../assets/icons/key-6-16.png"></Icon>
+          <Icon src="src/assets/icons/key-6-16.png"></Icon>
           <Input
             id="registerPassword"
             value={password}
