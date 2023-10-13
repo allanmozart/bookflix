@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { getAuthToken } from '../auth/login';
-import { bookUrl } from '../../utils/urls';
+import { ENDPOINT } from '../../utils/urls';
 
 export async function insertBook(title, description, year, bookCover) {
   const token = getAuthToken();
   try {
     const response = await axios.post(
-      bookUrl,
+      ENDPOINT.book,
       {
         title,
         description,
@@ -30,7 +30,7 @@ export async function insertBook(title, description, year, bookCover) {
 
 export default async function getBooks() {
   try {
-    const response = await axios.get(bookUrl);
+    const response = await axios.get(ENDPOINT.book);
 
     return { books: response.data.data, loading: false };
   } catch (error) {

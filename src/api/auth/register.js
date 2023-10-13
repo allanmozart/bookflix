@@ -1,9 +1,13 @@
 import axios from 'axios';
-import { registerUrl } from '../../utils/urls';
+import { ENDPOINT } from '../../utils/urls';
 
 export async function register({ name, email, password }) {
   try {
-    const response = await axios.post(registerUrl, { name, email, password });
+    const response = await axios.post(ENDPOINT.register, {
+      name,
+      email,
+      password,
+    });
     return { message: 'OK', data: response.data };
   } catch (error) {
     return {

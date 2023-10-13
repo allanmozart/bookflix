@@ -1,4 +1,7 @@
 const baseUrl = 'http://5.22.217.225:8081/api/v1';
-export const loginUrl = baseUrl + '/auth/login';
-export const registerUrl = baseUrl + '/auth/register';
-export const bookUrl = '/api/v1/book';
+
+export const ENDPOINT = {
+  login: baseUrl + '/auth/login',
+  register: baseUrl + '/auth/register',
+  book: '/api/v1/book',
+};
