@@ -6,5 +6,5 @@ export const Main = styled.div`
   position: absolute;
   background: no-repeat center center/cover;
   background-image: radial-gradient(rgba(0, 0, 0, 0.325), black 75%),
-    url('../../assets/bgBookflix3D.jpg');
+    url('/src/assets/bgBookflix3D.jpg');
 `;

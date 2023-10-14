@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Form, Input, LoginContainer, Title } from './style';
-import { verifyUser } from '../../requests/auth/login';
+import { verifyUser } from '../../api/auth/login';
 import { Paragraph } from '../../pages/LoginPage/style';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,8 +22,8 @@ function Login() {
     e.preventDefault();
 
     const response = await verifyUser(email, password);
-    console.log(response.data.message);
     setMessage(response.data.message);
+
     if (response?.message === 'OK') {
       console.log(response.data);
       setTimeout(() => {
@@ -51,8 +51,8 @@ function Login() {
           onChange={handlePasswordChange}
         />
         <Button>Login</Button>
-        <Paragraph>{message || null}</Paragraph>
       </Form>
+      <Paragraph>{message || null}</Paragraph>
     </LoginContainer>
   );
 }

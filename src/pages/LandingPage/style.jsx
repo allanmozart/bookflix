@@ -44,3 +44,20 @@ export const EmailContainer = styled.div`
     flex-direction: column;
   }
 `;
+export const Button = styled.button`
+  height: 55px;
+  size: 25px;
+  margin-left: 15px;
+  padding: 10px;
+  background-color: #FF0000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: sans-serif;
+  width: 150px;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    background-color: #790505;
+  }
+`;
