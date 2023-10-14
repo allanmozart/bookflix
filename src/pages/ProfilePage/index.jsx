@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 import { MainHeader } from "../../components/MainHeader";
@@ -14,7 +15,12 @@ import {
 } from "./style";
 
 export default function ProfilePage() {
-  // const handleAddProfile = () => {};
+  const [isVisible, setIsVisible] = useState(false);
+
+  function openModal(){
+    setIsVisible((isVisible) => !isVisible);
+  }
+
   return (
     <>
       <MainHeader>
@@ -35,12 +41,12 @@ export default function ProfilePage() {
                 <Paragraph style={{ fontSize: "14px" }}>Allan</Paragraph>
               </li>
               <li>
-                <AddProfileBtn />
+                <AddProfileBtn onClick={openModal}/>
                 <Paragraph style={{ fontSize: "14px" }}>Add Profile</Paragraph>
               </li>
             </ProfileList>
           </div>
-          <SelectProfileModal></SelectProfileModal>
+          {isVisible && <SelectProfileModal />}
         </div>
       </Page>
     </>
