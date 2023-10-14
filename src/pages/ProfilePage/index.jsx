@@ -46,7 +46,7 @@ export default function ProfilePage() {
               </li>
             </ProfileList>
           </div>
-          {isVisible && <SelectProfileModal />}
+          {isVisible && <SelectProfileModal/>}
         </div>
       </Page>
     </>

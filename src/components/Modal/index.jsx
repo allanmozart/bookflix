@@ -1,8 +1,16 @@
-// import { useState } from 'react';
+import { useState } from "react";
+
+import ProfilePage from "../../pages/ProfilePage";
+
 import { DefaultButton } from "../buttons/style";
 import { Title, Form, ProfileImage, Input, NewProfileContainer } from "./style";
 
 export const SelectProfileModal = () => {
+  const [isFormSubmit, setFormSubmit] = useState(null);
+
+  const handleFormSubmit = (e) => {
+    setFormSubmit(e.target.value)
+  }
   return (
     <>
       <Form style={{justifyContent: 'left'}}>
