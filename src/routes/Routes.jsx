@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPage from '../pages/LoginPage';
 import { LandingPage } from '../pages/LandingPage';
-import CatalogPage from '../pages/catalogPage';
+import CatalogPage from '../pages/CatalogPage';
 import RegisterPage from '../pages/RegisterPage';
 import NewBookPage from '../pages/NewBookPage';
 import MyBooksPage from '../pages/MyBooksPage';
