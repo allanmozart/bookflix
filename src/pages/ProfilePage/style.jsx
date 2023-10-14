@@ -58,7 +58,7 @@ export const AddProfileBtn = styled.button`
   min-width: 84px;
   width: 10vw;
   display: flex;
-  background-image: url("../../assets/plus-button-icon.jpg");
+  background-image: url("src/assets/plus-button-icon.jpg");
   background-color: #292525;
   background-size: cover; 
   border-radius: 4px;

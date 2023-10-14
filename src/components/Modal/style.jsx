@@ -33,7 +33,7 @@ export const ProfileImage = styled.img`
   border-radius: 4px;
   text-decoration: none;
   background-color: black;
-  background-image: url("../assets/netflix-default-profile-picture.jpg");
+  background-image: url("src/assets/netflix-default-profile-picture.jpg");
   margin-right: 15px;
 `;
 
