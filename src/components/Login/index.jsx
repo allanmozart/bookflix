@@ -3,12 +3,14 @@ import { Button, Form, Input, LoginContainer, Title } from './style';
 import { verifyUser } from '../../api/auth/login';
 import { Paragraph } from '../../pages/LoginPage/style';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../UserContext/User';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
+  const { setUserData, userData } = useUser();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -22,13 +24,14 @@ function Login() {
     e.preventDefault();
 
     const response = await verifyUser(email, password);
-    setMessage(response.data.message);
 
     if (response?.message === 'OK') {
-      console.log(response.data);
+      setUserData(response.data.data);
       setTimeout(() => {
         navigate('/catalog');
       }, 2000);
+    } else {
+      setMessage(response.data.message);
     }
   };
 
@@ -42,6 +45,7 @@ function Login() {
           placeholder="Enter your email"
           value={email}
           onChange={handleEmailChange}
+          required
         />
         <Input
           id="userPassword"
@@ -49,10 +53,15 @@ function Login() {
           placeholder="Enter your password"
           value={password}
           onChange={handlePasswordChange}
+          required
         />
         <Button>Login</Button>
       </Form>
       <Paragraph>{message || null}</Paragraph>
+
+      {userData.name !== null && (
+        <Paragraph>Welcome, {userData.name}!.</Paragraph>
+      )}
     </LoginContainer>
   );
 }

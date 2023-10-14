@@ -1,17 +1,15 @@
-import { MainHeader } from '../../components/MainHeader';
-import { Page } from './style';
 import { Link } from 'react-router-dom';
+import { MainHeader } from '../../components/MainHeader';
+import MyBooks from '../../components/MyBooks';
+import { RequireAuth } from '../../components/RequireAuth/RequireAuth';
+import { Page } from './style';
 import { Logo } from '../../components/Logo';
-import Catalog from '../../components/Catalog';
 import { DefaultButton } from '../../components/Buttons/style';
-import { Paragraph } from '../LoginPage/style';
-import { useUser } from '../../components/UserContext/User';
 
-export default function CatalogPage() {
-  const { userData } = useUser();
-
+export default function MyBooksPage() {
   return (
-    <>
+    <Page>
+      <RequireAuth />
       <MainHeader>
         <Link to="/">
           <Logo
@@ -29,10 +27,7 @@ export default function CatalogPage() {
           Logout
         </DefaultButton>
       </MainHeader>
-      <Paragraph>Welcome, {userData.name}</Paragraph>
-      <Page>
-        <Catalog></Catalog>
-      </Page>
-    </>
+      <MyBooks></MyBooks>
+    </Page>
   );
 }
