@@ -4,4 +4,5 @@ export const ENDPOINT = {
   login: baseUrl + '/auth/login',
   register: baseUrl + '/auth/register',
   book: '/api/v1/book',
+  profile: '/api/v1/user/profile'
 };
