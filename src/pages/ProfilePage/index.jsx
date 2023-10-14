@@ -4,14 +4,17 @@ import { MainHeader } from "../../components/MainHeader";
 import { Logo } from "../../components/Logo";
 import { SelectProfileModal } from "../../components/Modal";
 
-import { Page, Title, Paragraph, ProfileList } from "./style";
 import {
+  Page,
+  Title,
+  Paragraph,
+  ProfileList,
   AddProfileBtn,
   SelectProfileButton,
-} from "../../components/buttons/style";
+} from "./style";
 
 export default function ProfilePage() {
-  const handleAddProfile = () => {};
+  // const handleAddProfile = () => {};
   return (
     <>
       <MainHeader>
