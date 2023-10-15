@@ -12,7 +12,7 @@ export const AddNewProfileModal = (closeModal) => {
         <Title>Add New Profile</Title>
 
           <ProfileImage />
-          <Input placeholder="name" required></Input>
+          <Input placeholder="Name" required></Input>
         <DefaultButton style={{ marginTop: '10px'  }}>Submit</DefaultButton>
         <DefaultButton style={{ marginTop: '10px', backgroundColor:'grey' }} onClick={handleCancel}>Cancel</DefaultButton>
       </Form>
