@@ -9,6 +9,10 @@ export function getAuthToken() {
   return localStorage.getItem('authToken');
 }
 
+export function removeAuthToken() {
+  localStorage.removeItem('authToken', getAuthToken());
+}
+
 export async function verifyUser(email, password) {
   try {
     const response = await axios.post(ENDPOINT.login, {

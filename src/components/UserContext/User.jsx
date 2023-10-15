@@ -15,10 +15,17 @@ export function UserProvider({ children }) {
     profile_picture: null,
   });
 
-  console.log(userData);
+  const clearUserData = () => {
+    setUserData({
+      id: null,
+      name: null,
+      email: null,
+      profile_picture: null,
+    });
+  };
 
   return (
-    <UserContext.Provider value={{ userData, setUserData }}>
+    <UserContext.Provider value={{ userData, setUserData, clearUserData }}>
       {children}
     </UserContext.Provider>
   );

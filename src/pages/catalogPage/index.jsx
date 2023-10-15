@@ -5,6 +5,7 @@ import { Logo } from '../../components/Logo';
 import Catalog from '../../components/Catalog';
 import { DefaultButton } from '../../components/Buttons/style';
 import { useUser } from '../../components/UserContext/User';
+import { Logout } from '../../components/Logout';
 
 export default function CatalogPage() {
   const { userData } = useUser();
@@ -18,18 +19,17 @@ export default function CatalogPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
+
         <DefaultButton style={{ margin: '10px' }} to="/newbook">
           Insert New book
         </DefaultButton>
         <DefaultButton style={{ margin: '10px' }} to="/mybooks">
           My Books
         </DefaultButton>
-        <DefaultButton style={{ margin: '10px' }} to="/login">
-          Logout
-        </DefaultButton>
-        <Paragraph>{userData.name}</Paragraph>
-      </MainHeader>
 
+        <Logout></Logout>
+      </MainHeader>
+      <Paragraph>{userData.name}</Paragraph>
       <Page>
         <Catalog></Catalog>
       </Page>
