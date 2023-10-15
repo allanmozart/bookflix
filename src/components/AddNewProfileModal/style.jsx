@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Form = styled.div`
-  /* position: relative; */
-  /* display: flex; */
-  /* flex-direction: column; */
   margin-top: 80px;
   max-width: 700px;
   height: 500px;
@@ -22,9 +19,6 @@ export const NewProfileContainer = styled.div`
 `;
 
 export const ProfileImage = styled.img`
-  /* display: flex; */
-  /* height: 10vw;
-  width: 10vw; */
   max-width: 180px;
   max-height: 180px;
   min-height: 100px;
