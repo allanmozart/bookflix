@@ -1,34 +1,32 @@
-import { MainHeader } from '../../components/MainHeader';
-import { Page, Paragraph } from './style';
-import { Link } from 'react-router-dom';
-import { Logo } from '../../components/Logo';
-import Catalog from '../../components/Catalog';
-import { DefaultButton } from '../../components/Buttons/style';
-import { useUser } from '../../components/UserContext/User';
+import { Navbar, NavbarContainer, LinkNavbar } from "../../components/Navbar";
+import { Page } from "./style";
+import { Link } from "react-router-dom";
+import { Logo } from "../../components/Logo";
+import Catalog from "../../components/Catalog";
+import { DefaultButton } from "../../components/Buttons/style";
 
 export default function CatalogPage() {
-  const { userData } = useUser();
-
   return (
     <>
-      <MainHeader>
+      <Navbar>
         <Link to="/">
           <Logo
             src="https://fontmeme.com/permalink/231005/1bf0ab08da7c21a3ed063a6277666c66.png"
             alt="Bookflix Logo"
           ></Logo>
         </Link>
-        <DefaultButton style={{ margin: '10px' }} to="/newbook">
-          Insert New book
-        </DefaultButton>
-        <DefaultButton style={{ margin: '10px' }} to="/mybooks">
-          My Books
-        </DefaultButton>
-        <DefaultButton style={{ margin: '10px' }} to="/login">
-          Logout
-        </DefaultButton>
-        <Paragraph>{userData.name}</Paragraph>
-      </MainHeader>
+        <NavbarContainer>
+          <LinkNavbar href="/catalog">Catalog</LinkNavbar>
+
+          <LinkNavbar href="/mybooks">My Books</LinkNavbar>
+
+          <LinkNavbar href="/newbook">Insert New book</LinkNavbar>
+
+          <DefaultButton style={{ margin: "3px 10px" }} to="/login">
+            Logout
+          </DefaultButton>
+        </NavbarContainer>
+      </Navbar>
 
       <Page>
         <Catalog />
