@@ -1,11 +1,13 @@
-The road so far:
+## The road so far:
     - api folder: 
-        Created a new folder called "Profile" to a get into the profile endpoint to return when we reach profile page
+        - Created a new folder called "Profile" to a get into the profile endpoint to - return when we reach profile page
     
     - profile page folder:
-        Created the page itself in the index file importing the styles
-        TBD: Create a component in path "component/Profile/index.jsx" to split the code according to our pattern and just call the component the path "pages/app/ProfilePage/index.js"
+        - Created the page itself in the index file importing the styles
+        - TBD: Create a component in path "component/Profile/index.jsx" to split the code according to our pattern and just call the component the path "pages/app/ProfilePage/index.js"
 
+
+## Next Steps:
 
 1- When landing on profile page:
     - A get should be made to profile endpoint to retrieve the main user default profile picture (if it's a fresh account || profile picture wasn't changed)

@@ -2,7 +2,7 @@ import axios from "axios";
 import { ENDPOINT } from "../../utils/urls";
 import { getAuthToken } from "../../api/auth/login";
 
-export async function profile({ token }) {
+export async function profile(token) {
   token = getAuthToken();
   try {
     const response = await axios.get(ENDPOINT.profile, {
