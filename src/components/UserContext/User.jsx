@@ -9,10 +9,10 @@ export function useUser() {
 
 export function UserProvider({ children }) {
   const [userData, setUserData] = useState({
-    id: 1,
+    id: null,
     name: null,
-    email: 'john@example.com',
-    profile_picture: 'url',
+    email: null,
+    profile_picture: null,
   });
 
   console.log(userData);
