@@ -3,8 +3,7 @@ import { getAuthToken } from "../../api/auth/login";
 import { DefaultButton } from "../buttons/style";
 import { ENDPOINT } from "../../utils/urls";
 import axios from "axios";
-import { Title, Form, ProfileImage, Input } from "./style";
-import { updateProfile } from "../../api/profile/profile";
+import { Form, Input, ProfileImage, Title } from "../AddNewProfileModal/style";
 
 export function ProfileUpdate() {
     const [name, setName] = useState('');
@@ -29,7 +28,7 @@ export function ProfileUpdate() {
             .catch((error) => {
               console.error('Error trying to recover users profile', error);
             });
-        }, [authToken]);
+        }, []);
 
     const handleCancel = (closeModal) => {
         closeModal();
@@ -37,7 +36,7 @@ export function ProfileUpdate() {
 
     const handleSubmitUpdateProfile = (e) => {
         e.preventDefault();
-        const result = updateProfile(token, name, email);
+        const result = ProfileUpdate(authToken, name, email);
 
         if (result.message === 'OK') {
             console.log('Profile updated!');
@@ -63,14 +62,14 @@ export function ProfileUpdate() {
                     placeholder="Name" 
                     type="text" 
                     value={name} 
-                    onChange={(handleName)} 
+                    onChange={handleName} 
                     required>
                 </Input>
                 <Input 
                     placeholder="Email"
                     type="text" 
                     value={email} 
-                    onChange={(handleEmail)}
+                    onChange={handleEmail}
                     required>
                 </Input>
                 <DefaultButton 

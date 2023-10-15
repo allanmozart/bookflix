@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { AddProfileBtn, Paragraph, ProfileContainer, ProfileList, SelectProfileButton, Title } from "./style";
 import { AddNewProfileModal } from "../AddNewProfileModal";
+import { ProfileUpdate } from "../UpdateProfileModal";
 
 export function Profile() {
   const [addProfile, setAddProfile] = useState(false);
+  const [showUpdateProfile, setShowUpdateProfile] = useState(false);
 
   function openModal() {
     setAddProfile(true);
+  }
+
+  function showUpdateProfileForm() {
+    setShowUpdateProfile(true);
   }
 
   return (
@@ -15,7 +21,7 @@ export function Profile() {
         <div>
           <Title>{`Who's Reading?`}</Title>
           <ProfileList>
-            <li>
+            <li onClick={showUpdateProfileForm}>
               <SelectProfileButton style={{ marginRight: "10px" }} />
               <Paragraph style={{ fontSize: "14px" }}>Allan</Paragraph>
             </li>
@@ -27,6 +33,7 @@ export function Profile() {
         </div>
       )}
       {addProfile && <AddNewProfileModal closeModal={() => setAddProfile(false)} />}
+      {showUpdateProfile && <ProfileUpdate />}
     </ProfileContainer>
   );
 }
