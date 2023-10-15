@@ -15,6 +15,9 @@ export default function NewBookPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
+        <DefaultButton style={{ margin: '10px' }} to="/catalog">
+          Catalog
+        </DefaultButton>
         <DefaultButton style={{ margin: '10px' }} to="/newbook">
           Insert New book
         </DefaultButton>

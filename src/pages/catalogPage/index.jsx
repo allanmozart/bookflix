@@ -1,10 +1,9 @@
 import { MainHeader } from '../../components/MainHeader';
-import { Page } from './style';
+import { Page, Paragraph } from './style';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
 import Catalog from '../../components/Catalog';
 import { DefaultButton } from '../../components/Buttons/style';
-import { Paragraph } from '../LoginPage/style';
 import { useUser } from '../../components/UserContext/User';
 
 export default function CatalogPage() {
@@ -28,8 +27,9 @@ export default function CatalogPage() {
         <DefaultButton style={{ margin: '10px' }} to="/login">
           Logout
         </DefaultButton>
+        <Paragraph>{userData.name}</Paragraph>
       </MainHeader>
-      <Paragraph>Welcome, {userData.name}</Paragraph>
+
       <Page>
         <Catalog></Catalog>
       </Page>
