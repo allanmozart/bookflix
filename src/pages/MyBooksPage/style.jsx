@@ -18,5 +18,4 @@ export const Paragraph = styled.p`
   max-width: 200px;
   font-family: 'Helvetica', sans-serif;
   color: white;
-  border: 1px soid white;
 `;

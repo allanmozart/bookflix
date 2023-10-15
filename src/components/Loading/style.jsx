@@ -1,22 +1,14 @@
 import styled from 'styled-components';
 
-export const Page = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-`;
-
-export const Paragraph = styled.p`
+export const Loading = styled.p`
   display: flex;
   justify-content: center;
   text-align: center;
   padding-top: 10px;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 400;
-  max-width: 200px;
+  max-width: 400px;
   font-family: 'Helvetica', sans-serif;
   color: white;
-  border: 1px soid white;
 `;

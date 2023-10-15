@@ -1,16 +1,15 @@
-import { MainHeader } from '../../components/MainHeader';
-import { Page, Paragraph } from './style';
 import { Link } from 'react-router-dom';
+import { MainHeader } from '../../components/MainHeader';
+import MyBooks from '../../components/MyBooks';
+import { RequireAuth } from '../../components/RequireAuth/RequireAuth';
+import { Page } from './style';
 import { Logo } from '../../components/Logo';
-import Catalog from '../../components/Catalog';
 import { DefaultButton } from '../../components/Buttons/style';
-import { useUser } from '../../components/UserContext/User';
 
-export default function CatalogPage() {
-  const { userData } = useUser();
-
+export default function MyBooksPage() {
   return (
-    <>
+    <Page>
+      <RequireAuth />
       <MainHeader>
         <Link to="/">
           <Logo
@@ -18,6 +17,9 @@ export default function CatalogPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
+        <DefaultButton style={{ margin: '10px' }} to="/catalog">
+          Catalog
+        </DefaultButton>
         <DefaultButton style={{ margin: '10px' }} to="/newbook">
           Insert New book
         </DefaultButton>
@@ -27,12 +29,8 @@ export default function CatalogPage() {
         <DefaultButton style={{ margin: '10px' }} to="/login">
           Logout
         </DefaultButton>
-        <Paragraph>{userData.name}</Paragraph>
       </MainHeader>
-
-      <Page>
-        <Catalog></Catalog>
-      </Page>
-    </>
+      <MyBooks></MyBooks>
+    </Page>
   );
 }

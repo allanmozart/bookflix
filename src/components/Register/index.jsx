@@ -44,7 +44,7 @@ export function Register() {
       const loginResponse = await verifyUser(email, password);
       if (loginResponse.message === 'OK') {
         setTimeout(() => {
-          navigate('/Catalog');
+          navigate('/catalog');
         }, 2000);
       }
     } else {
@@ -52,6 +52,11 @@ export function Register() {
         status: 'error',
         errors: registrationResponse.data,
       });
+      if (registrationResponse.data[0] === 'Duplicate email') {
+        setTimeout(() => {
+          navigate('/login');
+        }, 4000);
+      }
     }
   };
 
