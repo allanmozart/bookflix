@@ -1,35 +1,34 @@
-import { MainHeader } from '../../components/MainHeader';
-import { Page, Paragraph } from './style';
-import { Link } from 'react-router-dom';
-import { Logo } from '../../components/Logo';
-import Catalog from '../../components/Catalog';
-import { DefaultButton } from '../../components/Buttons/style';
-import { useUser } from '../../components/UserContext/User';
-import { Logout } from '../../components/Logout';
+import { Page, Paragraph } from "./style";
+import { Link } from "react-router-dom";
+import { Logo } from "../../components/Logo";
+import Catalog from "../../components/Catalog";
+import { useUser } from "../../components/UserContext/User";
+import { Logout } from "../../components/Logout";
+import { Navbar, NavbarContainer, LinkNavbar } from "../../components/Navbar";
 
 export default function CatalogPage() {
   const { userData } = useUser();
-
   return (
     <>
-      <MainHeader>
+      <Navbar>
         <Link to="/">
           <Logo
             src="https://fontmeme.com/permalink/231005/1bf0ab08da7c21a3ed063a6277666c66.png"
             alt="Bookflix Logo"
           ></Logo>
         </Link>
+        <NavbarContainer>
+          <LinkNavbar href="/catalog">Catalog</LinkNavbar>
 
-        <DefaultButton style={{ margin: '10px' }} to="/newbook">
-          Insert New book
-        </DefaultButton>
-        <DefaultButton style={{ margin: '10px' }} to="/mybooks">
-          My Books
-        </DefaultButton>
+          <LinkNavbar href="/mybooks">My Books</LinkNavbar>
 
-        <Logout></Logout>
-      </MainHeader>
-      <Paragraph>{userData.name}</Paragraph>
+          <LinkNavbar href="/newbook">Insert New book</LinkNavbar>
+          <Paragraph>{userData.name}</Paragraph>
+          <Logout />
+        </NavbarContainer>
+      </Navbar>
+
+
       <Page>
         <Catalog />
       </Page>
