@@ -60,7 +60,7 @@ function Login() {
       <Paragraph>{message || null}</Paragraph>
 
       {userData.name !== null && (
-        <Paragraph>Welcome, {userData.name}!.</Paragraph>
+        <Paragraph>Welcome, {userData.name}!</Paragraph>
       )}
     </LoginContainer>
   );
