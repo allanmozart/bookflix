@@ -55,7 +55,7 @@ export function Register() {
       if (registrationResponse.data[0] === 'Duplicate email') {
         setTimeout(() => {
           navigate('/login');
-        }, 2000);
+        }, 4000);
       }
     }
   };
