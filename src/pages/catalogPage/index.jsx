@@ -6,6 +6,7 @@ import { useUser } from "../../components/UserContext/User";
 import { Logout } from "../../components/Logout";
 import { Navbar, NavbarContainer, LinkNavbar } from "../../components/Navbar";
 
+
 export default function CatalogPage() {
   const { userData } = useUser();
   return (

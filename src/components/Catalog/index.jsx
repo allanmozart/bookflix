@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import getBooks from "../../api/book";
-import { BookList, BookItem, CatalogContainer, BookCover, Paragraph } from "./style";
+import { BookList, BookItem, CatalogContainer, BookCover, Paragraph, RecoveryImage} from "./style";
 
 export default function Catalog() {
   const [books, setBooks] = useState([]);
@@ -37,15 +37,19 @@ export default function Catalog() {
             books.map((book, bookIndex) => (
               <BookItem key={book.id}>
                 <BookCover
-                  onClick={() =>
-                    setSelectedIndex(bookIndex)
-                  }
-                  src={book.book_cover}
-                  alt={`${book.title}cover`}
-                ></BookCover>
-                  {selectedIndex === bookIndex && (<><h2 style={{ fontSize: "145%" }}>{book.title}</h2>
-                  <p>Year: {book.year}</p>
-                  <p>Description: {book.description}</p></>)}
+                  onClick={() => setSelectedIndex(bookIndex)}
+                  data={book.book_cover}
+                  alt={`${book.title}cover`}>
+                  <RecoveryImage src={"/missingImage.png"} />
+                </BookCover>
+
+                {selectedIndex === bookIndex && (
+                  <>
+                    <h2 style={{ fontSize: "145%" }}>{book.title}</h2>
+                    <p>Year: {book.year}</p>
+                    <p>Description: {book.description}</p>
+                  </>
+                )}
               </BookItem>
             ))
           ) : (

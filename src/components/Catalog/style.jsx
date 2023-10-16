@@ -5,7 +5,6 @@ export const CatalogContainer = styled.div`
   justify-content: center;
   text-align: center;
   font-family: Arial, sans-serif;
-  display: flex;
   align-items: center;
 `;
 
@@ -16,15 +15,19 @@ export const BookList = styled.ul`
   flex-wrap: wrap;
   width: 90%;
   list-style: none;
-  margin: 70px 15px;
+  margin: 30px 15px;
 `;
 
 export const BookItem = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  margin: 8px;
   background-color: transparent;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  width: 20%;
+  height: 50%;
+  margin: 5%;
 
   &:hover {
     background-color: rgba(200, 200, 200, 0.4);
@@ -37,15 +40,22 @@ export const Paragraph = styled.p`
   padding-top: 10px;
   flex-wrap: wrap;
   font-size: 25px;
-  font-weight: 400;
   font-family: "Helvetica", sans-serif;
   color: white;
 `;
 
-export const BookCover = styled.img`
-  width: 55%;
+export const BookCover = styled.object`
+  height: 400px;
 
   &:hover {
-    width: 70%;
+    height: 420px;
+  }
+`;
+
+export const RecoveryImage = styled.img`
+  height: 400px;
+
+  &:hover {
+    height: 420px;
   }
 `;
