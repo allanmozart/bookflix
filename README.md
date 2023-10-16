@@ -24,6 +24,7 @@ yarn dev
 - [x] Insert Book
 - [x] My Books Page
 - [x] Create Context
+- [x] Logout
 
 ## Team Members
 

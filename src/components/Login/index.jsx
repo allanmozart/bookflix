@@ -1,8 +1,15 @@
 import { useState } from 'react';
-import { Button, Form, Input, LoginContainer, Title } from './style';
+import {
+  Button,
+  Form,
+  Input,
+  LoginContainer,
+  NoAccountContainer,
+  Title,
+} from './style';
 import { verifyUser } from '../../api/auth/login';
 import { Paragraph } from '../../pages/LoginPage/style';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../UserContext/User';
 
 function Login() {
@@ -57,8 +64,14 @@ function Login() {
         />
         <Button>Login</Button>
       </Form>
-      <Paragraph>{message || null}</Paragraph>
 
+      <NoAccountContainer>
+        {`Don't have an account?`}
+        <Link to={'/register'} style={{ color: 'white' }}>
+          Sign up
+        </Link>
+      </NoAccountContainer>
+      <Paragraph color="white">{message || null}</Paragraph>
       {userData.name !== null && (
         <Paragraph>Welcome, {userData.name}!</Paragraph>
       )}

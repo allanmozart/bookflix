@@ -2,11 +2,15 @@ import { Link } from 'react-router-dom';
 import { MainHeader } from '../../components/MainHeader';
 import MyBooks from '../../components/MyBooks';
 import { RequireAuth } from '../../components/RequireAuth/RequireAuth';
-import { Page } from './style';
+import { Page, Paragraph } from './style';
 import { Logo } from '../../components/Logo';
 import { DefaultButton } from '../../components/Buttons/style';
+import { Logout } from '../../components/Logout';
+import { useUser } from '../../components/UserContext/User';
 
 export default function MyBooksPage() {
+  const { userData } = useUser();
+
   return (
     <Page>
       <RequireAuth />
@@ -26,10 +30,9 @@ export default function MyBooksPage() {
         <DefaultButton style={{ margin: '10px' }} to="/mybooks">
           My Books
         </DefaultButton>
-        <DefaultButton style={{ margin: '10px' }} to="/login">
-          Logout
-        </DefaultButton>
+        <Logout></Logout>
       </MainHeader>
+      <Paragraph>{userData.name}</Paragraph>
       <MyBooks></MyBooks>
     </Page>
   );
