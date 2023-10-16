@@ -14,7 +14,12 @@ export const BookItem = styled.li`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
-export const BookCover = styled.img`
+export const BookCover = styled.object`
+  width: 350px;
+  height: 450px;
+`;
+
+export const RecoveryImage = styled.img`
   width: 350px;
   height: 450px;
 `;

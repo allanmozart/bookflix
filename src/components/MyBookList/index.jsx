@@ -1,5 +1,11 @@
-import { BookCover, BookItem, BookList, Paragraph } from '../MyBookList/style';
-import PropTypes from 'prop-types';
+import {
+  BookCover,
+  BookItem,
+  BookList,
+  Paragraph,
+  RecoveryImage,
+} from "../MyBookList/style";
+import PropTypes from "prop-types";
 
 export function MyBookList({ books }) {
   return (
@@ -7,10 +13,9 @@ export function MyBookList({ books }) {
       {Array.isArray(books) && books.length > 0 ? (
         books.map((book) => (
           <BookItem key={book.id}>
-            <BookCover
-              src={book.book_cover}
-              alt={`${book.title} cover`}
-            ></BookCover>
+            <BookCover data={book.book_cover} alt={`${book.title} cover`}>
+              <RecoveryImage src={"/missingImage.png"} />
+            </BookCover>
           </BookItem>
         ))
       ) : (

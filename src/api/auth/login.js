@@ -10,8 +10,9 @@ export function getAuthToken() {
   return localStorage.getItem("authToken");
 }
 
-export function removeAuthToken() {
-  localStorage.removeItem("authToken", getAuthToken());
+export function removeLoginCredentials() {
+  localStorage.removeItem("authToken");
+  localStorage.removeItem("user");
 }
 
 export async function verifyUser(email, password) {
