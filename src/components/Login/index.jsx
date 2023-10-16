@@ -68,7 +68,7 @@ function Login() {
       <NoAccountContainer>
         {`Don't have an account?`}
         <Link to={'/register'} style={{ color: 'white' }}>
-          Register
+          Sign-up
         </Link>
       </NoAccountContainer>
       <Paragraph color="white">{message || null}</Paragraph>
