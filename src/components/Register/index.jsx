@@ -105,7 +105,7 @@ export function Register() {
         <Paragraph>
           Already have an account?
           <Link to={'/login'} style={{ color: 'white' }}>
-            Sign-in
+            Sign in
           </Link>
         </Paragraph>
 

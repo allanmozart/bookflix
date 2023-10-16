@@ -1,5 +1,4 @@
 import { Register } from '../../components/Register';
-import { LogoHuge } from '../../components/Logo';
 import { Page } from './style';
 
 export default function RegisterPage() {
@@ -7,7 +6,6 @@ export default function RegisterPage() {
     <>
       <Page>
         <Register></Register>
-        <LogoHuge src="src/assets/icons8-netflix-480.svg"></LogoHuge>
       </Page>
     </>
   );
