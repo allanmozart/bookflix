@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '../Icons/style';
 import {
   Button,
@@ -13,6 +13,7 @@ import {
 } from './style';
 import { register } from '../../api/auth/register';
 import { verifyUser } from '../../api/auth/login';
+import { Paragraph } from '../../pages/LoginPage/style';
 
 export function Register() {
   const [email, setEmail] = useState(
@@ -100,6 +101,14 @@ export function Register() {
           ></Input>
         </InputContainer>
         <Button>Register</Button>
+
+        <Paragraph>
+          Already have an account?
+          <Link to={'/login'} style={{ color: 'white' }}>
+            Register
+          </Link>
+        </Paragraph>
+
         {registrationStatus.status === 'success' && (
           <RegisterStatus>
             Registration completed. Welcome to Bookflix!

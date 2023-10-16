@@ -41,3 +41,16 @@ export const Button = styled.button`
     background-color: #790505;
   }
 `;
+
+export const NoAccountContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  max-width: 200px;
+  font-family: 'Helvetica', sans-serif;
+  color: white;
+`;
