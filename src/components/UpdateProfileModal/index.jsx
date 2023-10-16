@@ -3,47 +3,47 @@ import { getAuthToken } from "../../api/auth/login";
 import { DefaultButton } from "../buttons/style";
 import { ENDPOINT } from "../../utils/urls";
 import axios from "axios";
-import { Form, Input, ProfileImage, Title } from "../AddNewProfileModal/style";
+import { Form } from "../AddNewProfileModal/style";
+import { EmailInput, InputName, ProfileImageUpdate, Title } from "./style";
+import { profile, updateProfile } from "../../api/profile/profile";
 
-export function ProfileUpdate() {
+export function ProfileUpdate(closeModal) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [authToken, setAuthToken] = useState('');
+    const [profileImage, setProfileImage] = useState('');
+    const [token, setToken] = useState('');
 
     useEffect(() => {
-        const userToken = getAuthToken();
-        setAuthToken(userToken);
+        async function getProfile() {
+            const userToken = setToken(getAuthToken());
+            const response = await profile(userToken);
+            console.log(response.data.data);
+            setName(response.data.data.name);
+            setEmail(response.data.data.email);
+            setProfileImage(response.data.data.profile_picture);
+        }
+        getProfile();
+    }, []);
 
-        axios.get(ENDPOINT.profile, {
-           headers: 
-           {
-              Authorization: `Bearer ${userToken}`,
-           },
-        })
-          .then((response) => {
-              const userData = response.data;
-              setName(userData.name); 
-              setEmail(userData.email); 
-           })
-            .catch((error) => {
-              console.error('Error trying to recover users profile', error);
-            });
-        }, []);
-
-    const handleCancel = (closeModal) => {
+    const handleCancel = () => {
         closeModal();
     }
 
-    const handleSubmitUpdateProfile = (e) => {
+    /*const handleSubmitUpdateProfile = (e) => {
         e.preventDefault();
-        const result = ProfileUpdate(authToken, name, email);
 
-        if (result.message === 'OK') {
-            console.log('Profile updated!');
-        } else {
-            console.error('Error trying to update the users profile', result.data);
-        }
-    };
+        updateProfile(token, email, name)
+         .then((result) => {
+            if (result.message === 'OK') {
+                console.log('Profile updated!');
+            } else {
+                console.error('Error trying to update the user\'s profile', result.data);
+            }
+         })
+         .catch((error) => {
+            console.error('Error trying to update the user\'s profile', error);
+        });
+    };*/
 
     const handleName = (e) => {
         setName(e.target.value);
@@ -57,24 +57,24 @@ export function ProfileUpdate() {
         <>
             <Form style={{justifyContent: 'left'}}>
                 <Title>Edit Profile</Title>
-                <ProfileImage />
-                <Input 
+                <ProfileImageUpdate style={{ backgroundImage:`url(${profileImage})` }} />
+                <InputName
                     placeholder="Name" 
                     type="text" 
                     value={name} 
                     onChange={handleName} 
                     required>
-                </Input>
-                <Input 
+                </InputName>
+                <EmailInput
                     placeholder="Email"
                     type="text" 
                     value={email} 
                     onChange={handleEmail}
                     required>
-                </Input>
+                </EmailInput>
                 <DefaultButton 
                     style={{ marginTop: '10px'  }} 
-                    onClick={handleSubmitUpdateProfile}> Submit
+                    onClick={''}> Submit
                 </DefaultButton>
                 <DefaultButton 
                     style={{ marginTop: '10px', backgroundColor:'grey' }} 

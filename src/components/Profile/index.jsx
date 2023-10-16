@@ -33,7 +33,7 @@ export function Profile() {
         </div>
       )}
       {addProfile && <AddNewProfileModal closeModal={() => setAddProfile(false)} />}
-      {showUpdateProfile && <ProfileUpdate />}
+      {showUpdateProfile && <ProfileUpdate closeModal={() => setShowUpdateProfile(false)} />}
     </ProfileContainer>
   );
 }
