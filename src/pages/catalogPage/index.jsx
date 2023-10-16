@@ -28,7 +28,6 @@ export default function CatalogPage() {
         </NavbarContainer>
       </Navbar>
 
-
       <Page>
         <Catalog />
       </Page>
