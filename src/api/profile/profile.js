@@ -19,13 +19,14 @@ export async function profile(token) {
   }
 }
 
-export async function updateProfile(token, email, name){
+export async function updateProfile(token, email, name, profile_picture){
   token = getAuthToken();
   try{
     const response = await axios.put(ENDPOINT.profile,
       {
         email, 
         name,
+        profile_picture
       },
       {
         headers: 

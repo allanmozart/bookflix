@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAuthToken } from "../../api/auth/login";
 import { DefaultButton } from "../buttons/style";
-import { ENDPOINT } from "../../utils/urls";
-import axios from "axios";
 import { Form } from "../AddNewProfileModal/style";
 import { EmailInput, InputName, ProfileImageUpdate, Title } from "./style";
 import { profile, updateProfile } from "../../api/profile/profile";
@@ -12,6 +10,7 @@ export function ProfileUpdate(closeModal) {
     const [email, setEmail] = useState('');
     const [profileImage, setProfileImage] = useState('');
     const [token, setToken] = useState('');
+    const [isProfileUpdated, setIsProfileUpdated] = useState(false);
 
     useEffect(() => {
         async function getProfile() {
@@ -29,13 +28,13 @@ export function ProfileUpdate(closeModal) {
         closeModal();
     }
 
-    /*const handleSubmitUpdateProfile = (e) => {
+    const handleSubmitUpdateProfile = (e) => {
         e.preventDefault();
 
-        updateProfile(token, email, name)
+        updateProfile(token, email, name, profileImage)
          .then((result) => {
             if (result.message === 'OK') {
-                console.log('Profile updated!');
+                setIsProfileUpdated(true);
             } else {
                 console.error('Error trying to update the user\'s profile', result.data);
             }
@@ -43,7 +42,7 @@ export function ProfileUpdate(closeModal) {
          .catch((error) => {
             console.error('Error trying to update the user\'s profile', error);
         });
-    };*/
+    };
 
     const handleName = (e) => {
         setName(e.target.value);
@@ -74,12 +73,13 @@ export function ProfileUpdate(closeModal) {
                 </EmailInput>
                 <DefaultButton 
                     style={{ marginTop: '10px'  }} 
-                    onClick={''}> Submit
+                    onClick={handleSubmitUpdateProfile}> Submit
                 </DefaultButton>
                 <DefaultButton 
                     style={{ marginTop: '10px', backgroundColor:'grey' }} 
                     onClick={handleCancel}>Cancel
                 </DefaultButton>
+                {isProfileUpdated && <p>Profile is Updated!</p>}
             </Form>  
         </>
     )

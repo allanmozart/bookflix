@@ -17,7 +17,7 @@ export function Profile() {
 
   return (
     <ProfileContainer>
-      {!addProfile && (
+      {!addProfile && !showUpdateProfile && (
         <div>
           <Title>{`Who's Reading?`}</Title>
           <ProfileList>
