@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Page = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
+  justify-content: flex-start;
+  flex-direction: column;
   height: 100%;
 
   @media (max-width: 1024px) {
