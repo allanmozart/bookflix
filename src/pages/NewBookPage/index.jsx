@@ -1,12 +1,13 @@
 import { Logo } from "../../components/Logo";
-import { MainHeader } from "../../components/MainHeader";
 import { Link } from "react-router-dom";
-import { Page } from "./style";
+import { Page, Paragraph } from "./style";
 import NewBook from "../../components/NewBook";
-import { DefaultButton } from "../../components/Buttons/style";
+import { Logout } from "../../components/Logout";
 import { Navbar, NavbarContainer, LinkNavbar } from "../../components/Navbar";
+import { useUser } from "../../components/UserContext/User";
 
 export default function NewBookPage() {
+  const { userData } = useUser();
   return (
     <Page>
       <Navbar>
@@ -17,15 +18,13 @@ export default function NewBookPage() {
           ></Logo>
         </Link>
         <NavbarContainer>
-          <LinkNavbar href="/catalog">Catalog</LinkNavbar>
+          <LinkNavbar to="/catalog">Catalog</LinkNavbar>
 
-          <LinkNavbar href="/mybooks">My Books</LinkNavbar>
+          <LinkNavbar to="/mybooks">My Books</LinkNavbar>
 
-          <LinkNavbar href="/newbook">Insert New book</LinkNavbar>
-
-          <DefaultButton style={{ margin: "3px 10px" }} to="/login">
-            Logout
-          </DefaultButton>
+          <LinkNavbar to="/newbook">Insert New book</LinkNavbar>
+          <Paragraph>{userData.name}</Paragraph>
+          <Logout />
         </NavbarContainer>
       </Navbar>
       <NewBook></NewBook>

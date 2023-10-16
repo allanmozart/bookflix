@@ -1,16 +1,17 @@
-import axios from 'axios';
-import { ENDPOINT } from '../../utils/urls';
+import axios from "axios";
+import { ENDPOINT } from "../../utils/urls";
 
-function setAuthToken(token) {
-  localStorage.setItem('authToken', token);
+function setUserInLocalStorage(user) {
+  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("authToken", user.token);
 }
 
 export function getAuthToken() {
-  return localStorage.getItem('authToken');
+  return localStorage.getItem("authToken");
 }
 
 export function removeAuthToken() {
-  localStorage.removeItem('authToken', getAuthToken());
+  localStorage.removeItem("authToken", getAuthToken());
 }
 
 export async function verifyUser(email, password) {
@@ -20,19 +21,18 @@ export async function verifyUser(email, password) {
       password,
     });
 
-    const token = response.data.data.token;
-    setAuthToken(token);
-    return { message: 'OK', data: response?.data };
+    setUserInLocalStorage(response.data.data);
+    return { message: "OK", data: response?.data };
   } catch (error) {
-    return { message: 'Error occurred', data: error.response?.data };
+    return { message: "Error occurred", data: error.response?.data };
   }
 }
 
 export function setAuthHeader() {
   const token = getAuthToken();
   if (token) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   } else {
-    delete axios.defaults.headers.common['Authorization'];
+    delete axios.defaults.headers.common["Authorization"];
   }
 }

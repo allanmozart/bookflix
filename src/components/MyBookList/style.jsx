@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const BookList = styled.ul`
   list-style: none;
@@ -17,4 +17,13 @@ export const BookItem = styled.li`
 export const BookCover = styled.img`
   width: 350px;
   height: 450px;
+`;
+
+export const Paragraph = styled.p`
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  font-size: 25px;
+  color: white;
 `;

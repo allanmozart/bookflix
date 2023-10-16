@@ -1,4 +1,4 @@
-import { BookCover, BookItem, BookList } from '../MyBookList/style';
+import { BookCover, BookItem, BookList, Paragraph } from '../MyBookList/style';
 import PropTypes from 'prop-types';
 
 export function MyBookList({ books }) {
@@ -14,7 +14,7 @@ export function MyBookList({ books }) {
           </BookItem>
         ))
       ) : (
-        <p>No books available.</p>
+        <Paragraph>No books available.</Paragraph>
       )}
     </BookList>
   );
