@@ -10,6 +10,21 @@ export function getAuthToken() {
   return localStorage.getItem("authToken");
 }
 
+export function userHasLogin() {
+  const authToken = localStorage.getItem("authToken");
+  const user = localStorage.getItem("user");
+  return authToken && user;
+}
+
+/*
+o return é boolean
+if(authToken !== null && user !== null) {
+  return true;
+} else {
+ return false;
+}
+*/
+
 export function removeLoginCredentials() {
   localStorage.removeItem("authToken");
   localStorage.removeItem("user");

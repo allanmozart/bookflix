@@ -13,21 +13,21 @@ export const BookList = styled.ul`
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
   list-style: none;
-  margin: 30px 15px;
+  margin: 30px auto;
 `;
 
 export const BookItem = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+justify-content: center;
+flex-direction: column;
   color: white;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.1);
   width: 20%;
-  height: 50%;
-  margin: 5%;
+  height: 55%;
+  margin: 3%;
 
   &:hover {
     background-color: rgba(200, 200, 200, 0.4);
@@ -44,17 +44,20 @@ export const Paragraph = styled.p`
 `;
 
 export const BookCover = styled.object`
-  height: 400px;
+display: flex;
+justify-content: center;
+  height: 320px;
+
 
   &:hover {
-    height: 420px;
+    height: 320px;
   }
 `;
 
 export const RecoveryImage = styled.img`
-  height: 400px;
+  height: 300px;
 
   &:hover {
-    height: 420px;
+    height: 320px;
   }
 `;
