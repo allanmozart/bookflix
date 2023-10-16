@@ -40,7 +40,6 @@ export const Paragraph = styled.p`
   padding-top: 10px;
   flex-wrap: wrap;
   font-size: 25px;
-  font-family: "Helvetica", sans-serif;
   color: white;
 `;
 

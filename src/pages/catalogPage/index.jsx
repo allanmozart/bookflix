@@ -19,11 +19,11 @@ export default function CatalogPage() {
           ></Logo>
         </Link>
         <NavbarContainer>
-          <LinkNavbar href="/catalog">Catalog</LinkNavbar>
+          <LinkNavbar to="/catalog">Catalog</LinkNavbar>
 
-          <LinkNavbar href="/mybooks">My Books</LinkNavbar>
+          <LinkNavbar to="/mybooks">My Books</LinkNavbar>
 
-          <LinkNavbar href="/newbook">Insert New book</LinkNavbar>
+          <LinkNavbar to="/newbook">Insert New book</LinkNavbar>
           <Paragraph>{userData.name}</Paragraph>
           <Logout />
         </NavbarContainer>

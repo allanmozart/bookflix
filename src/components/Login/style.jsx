@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// Styled components for your login form
 export const LoginContainer = styled.div`
   margin-top: 80px;
   max-width: 700px;
@@ -51,5 +50,14 @@ export const NoAccountContainer = styled.div`
   font-weight: 400;
   max-width: 200px;
   font-family: 'Helvetica', sans-serif;
+  color: white;
+`;
+
+export const Paragraph = styled.p`
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  font-size: 25px;
   color: white;
 `;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Navbar = styled.nav`
@@ -6,7 +7,6 @@ export const Navbar = styled.nav`
   background-color: rgba(28, 28, 28, 0.4);
   align-items: center;
   padding: 10px;
-  margin-right
 `;
 
 export const NavbarContainer = styled.div`
@@ -15,7 +15,7 @@ margin-left: 50%;
 height: 40px;
 `;
 
-export const LinkNavbar = styled.a`
+export const LinkNavbar = styled(Link)`
   display: flex;
   color: aliceblue;
   text-decoration: none;

@@ -46,14 +46,14 @@ export default function Catalog() {
                 {selectedIndex === bookIndex && (
                   <>
                     <h2 style={{ fontSize: "145%" }}>{book.title}</h2>
-                    <p>Year: {book.year}</p>
-                    <p>Description: {book.description}</p>
+                    <p><b>Year:</b> {book.year}</p>
+                    <p><b>Description:</b> {book.description}</p>
                   </>
                 )}
               </BookItem>
             ))
           ) : (
-            <p>No books available.</p>
+            <Paragraph>No books available.</Paragraph>
           )}
         </BookList>
       )}

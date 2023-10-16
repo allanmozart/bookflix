@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { removeAuthToken } from '../../api/auth/login';
+import { removeLoginCredentials } from '../../api/auth/login';
 import { LogoutButton } from '../Buttons/style';
 import { useUser } from '../UserContext/User';
 
@@ -8,7 +8,7 @@ export function Logout() {
   const { clearUserData } = useUser();
   const HandleLogout = () => {
     clearUserData();
-    removeAuthToken();
+    removeLoginCredentials();
     navigate('/login');
   };
 
