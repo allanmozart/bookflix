@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Navbar = styled.nav`
   display: flex;
@@ -10,9 +10,9 @@ export const Navbar = styled.nav`
 `;
 
 export const NavbarContainer = styled.div`
-display: flex;
-margin-left: 50%;
-height: 40px;
+  display: flex;
+  margin-left: 50%;
+  height: 40px;
 `;
 
 export const LinkNavbar = styled(Link)`

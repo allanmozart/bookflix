@@ -1,33 +1,24 @@
-import axios from "axios";
-import { ENDPOINT } from "../../utils/urls";
+import axios from 'axios';
+import { ENDPOINT } from '../../utils/urls';
 
 function setUserInLocalStorage(user) {
-  localStorage.setItem("user", JSON.stringify(user));
-  localStorage.setItem("authToken", user.token);
+  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem('authToken', user.token);
 }
 
 export function getAuthToken() {
-  return localStorage.getItem("authToken");
+  return localStorage.getItem('authToken');
 }
 
 export function userHasLogin() {
-  const authToken = localStorage.getItem("authToken");
-  const user = localStorage.getItem("user");
+  const authToken = localStorage.getItem('authToken');
+  const user = localStorage.getItem('user');
   return authToken && user;
 }
 
-/*
-o return é boolean
-if(authToken !== null && user !== null) {
-  return true;
-} else {
- return false;
-}
-*/
-
 export function removeLoginCredentials() {
-  localStorage.removeItem("authToken");
-  localStorage.removeItem("user");
+  localStorage.removeItem('authToken');
+  localStorage.removeItem('user');
 }
 
 export async function verifyUser(email, password) {
@@ -38,17 +29,17 @@ export async function verifyUser(email, password) {
     });
 
     setUserInLocalStorage(response.data.data);
-    return { message: "OK", data: response?.data };
+    return { message: 'OK', data: response?.data };
   } catch (error) {
-    return { message: "Error occurred", data: error.response?.data };
+    return { message: 'Error occurred', data: error.response?.data };
   }
 }
 
 export function setAuthHeader() {
   const token = getAuthToken();
   if (token) {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   } else {
-    delete axios.defaults.headers.common["Authorization"];
+    delete axios.defaults.headers.common['Authorization'];
   }
 }

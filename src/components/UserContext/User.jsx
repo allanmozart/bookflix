@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import PropTypes from "prop-types";
+import { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const UserContext = createContext();
 
@@ -9,7 +9,7 @@ export function useUser() {
 
 export function UserProvider({ children }) {
   const [userData, setUserData] = useState(() => {
-    const existingUser = localStorage.getItem("user");
+    const existingUser = localStorage.getItem('user');
 
     if (existingUser) {
       return JSON.parse(existingUser);

@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPage from '../pages/LoginPage';
 import { LandingPage } from '../pages/LandingPage';
 import CatalogPage from '../pages/CatalogPage';
@@ -7,7 +6,7 @@ import RegisterPage from '../pages/RegisterPage';
 import NewBookPage from '../pages/NewBookPage';
 import MyBooksPage from '../pages/MyBooksPage';
 import { UserProvider } from '../components/UserContext/User';
-import { ErrorPage } from '../pages/Error'
+import { ErrorPage } from '../pages/Error';
 
 export const AllRoutes = () => {
   return (
