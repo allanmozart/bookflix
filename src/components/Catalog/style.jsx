@@ -25,8 +25,8 @@ export const BookItem = styled.li`
   color: white;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.1);
-  width: 20%;
-  height: 55%;
+  width: 10%;
+  height: 65%;
   margin: 3%;
 
   &:hover {

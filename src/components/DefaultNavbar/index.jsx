@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
-import { LinkNavbar, Navbar, NavbarContainer } from './style';
+import {
+  LinkNavbar,
+  NameDisplay,
+  Navbar,
+  NavbarContainer,
+  ProfileDisplay,
+} from './style';
 import { Logo } from '../Logo';
-import { Paragraph } from '../Catalog/style';
 import { getFirstName } from '../../utils/firstName';
 import { Logout } from '../Logout';
 import { useUser } from '../UserContext/User';
@@ -22,9 +27,11 @@ function DefaultNavbar() {
         <LinkNavbar to="/mybooks">My Books</LinkNavbar>
 
         <LinkNavbar to="/newbook">Insert New book</LinkNavbar>
-        <Paragraph>{getFirstName(userData.name)}</Paragraph>
-        <Logout />
       </NavbarContainer>
+      <ProfileDisplay>
+        <NameDisplay>{getFirstName(userData.name)}</NameDisplay>
+        <Logout />
+      </ProfileDisplay>
     </Navbar>
   );
 }
