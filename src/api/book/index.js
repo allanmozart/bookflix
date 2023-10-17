@@ -4,21 +4,19 @@ import { ENDPOINT } from '../../utils/urls';
 
 export async function insertBook(title, description, year, bookCover) {
   const token = getAuthToken();
+  const bookBody = {
+    title,
+    description,
+    year,
+    book_cover: bookCover,
+  };
+
   try {
-    const response = await axios.post(
-      ENDPOINT.book,
-      {
-        title,
-        description,
-        year,
-        bookCover,
+    const response = await axios.post(ENDPOINT.book, bookBody, {
+      headers: {
+        Authorization: token,
       },
-      {
-        headers: {
-          Authorization: token,
-        },
-      }
-    );
+    });
     return { message: 'OK', data: response.data };
   } catch (error) {
     return {
