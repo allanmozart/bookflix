@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const RegisterContainer = styled.div`
-  margin-top: 80px;
   max-width: 50%;
   margin: 75 auto;
-  padding: 65px;
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,16 +45,13 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  margin-top: 20px;
+ margin-top: 20px;
   padding: 10px;
   background-color: #ff0000;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-family: sans-serif;
-  width: 150px;
   cursor: pointer;
-  text-align: center;
 
   &:hover {
     background-color: #790505;

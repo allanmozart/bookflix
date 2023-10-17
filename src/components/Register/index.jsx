@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '../Icons/style';
 import {
   Button,
@@ -13,6 +13,7 @@ import {
 } from './style';
 import { register } from '../../api/auth/register';
 import { verifyUser } from '../../api/auth/login';
+import { Paragraph } from '../../pages/LoginPage/style';
 
 export function Register() {
   const [email, setEmail] = useState(
@@ -44,7 +45,7 @@ export function Register() {
       const loginResponse = await verifyUser(email, password);
       if (loginResponse.message === 'OK') {
         setTimeout(() => {
-          navigate('/Catalog');
+          navigate('/catalog');
         }, 2000);
       }
     } else {
@@ -52,6 +53,11 @@ export function Register() {
         status: 'error',
         errors: registrationResponse.data,
       });
+      if (registrationResponse.data[0] === 'Duplicate email') {
+        setTimeout(() => {
+          navigate('/login');
+        }, 4000);
+      }
     }
   };
 
@@ -95,6 +101,14 @@ export function Register() {
           ></Input>
         </InputContainer>
         <Button>Register</Button>
+
+        <Paragraph>
+          Already have an account?
+          <Link to={'/login'} style={{ color: 'white' }}>
+            Sign in
+          </Link>
+        </Paragraph>
+
         {registrationStatus.status === 'success' && (
           <RegisterStatus>
             Registration completed. Welcome to Bookflix!

@@ -37,3 +37,23 @@ export const SubmitButton = styled.button`
     background-color: #790505;
   }
 `;
+
+export const LogoutButton = styled.button`
+  height: ${({ height }) => height || '33px'};
+  background: ${({ color }) => color || 'red'};
+  text-decoration: none;
+  color: white;
+  font-family: 'Paytone One', sans-serif;
+  border-radius: 4px;
+  width: auto;
+  font-size: ${({ size }) => size || '16px'};
+  font-weight: 400;
+  padding: 15px 20px 18px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #670101;
+  }
+`;

@@ -28,6 +28,19 @@ export async function insertBook(title, description, year, bookCover) {
   }
 }
 
+export async function getMyBooks(id) {
+  try {
+    const response = await axios.get(ENDPOINT.book);
+
+    return {
+      books: response.data.data.filter((book) => book.user.id === id),
+      loading: false,
+    };
+  } catch (error) {
+    console.error('Error fetching books:', error);
+  }
+}
+
 export default async function getBooks() {
   try {
     const response = await axios.get(ENDPOINT.book);

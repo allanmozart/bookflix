@@ -1,12 +1,24 @@
 import axios from 'axios';
 import { ENDPOINT } from '../../utils/urls';
 
-function setAuthToken(token) {
-  localStorage.setItem('authToken', token);
+function setUserInLocalStorage(user) {
+  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem('authToken', user.token);
 }
 
 export function getAuthToken() {
   return localStorage.getItem('authToken');
+}
+
+export function userHasLogin() {
+  const authToken = localStorage.getItem('authToken');
+  const user = localStorage.getItem('user');
+  return authToken && user;
+}
+
+export function removeLoginCredentials() {
+  localStorage.removeItem('authToken');
+  localStorage.removeItem('user');
 }
 
 export async function verifyUser(email, password) {
@@ -16,8 +28,7 @@ export async function verifyUser(email, password) {
       password,
     });
 
-    const token = response.data.data.token;
-    setAuthToken(token);
+    setUserInLocalStorage(response.data.data);
     return { message: 'OK', data: response?.data };
   } catch (error) {
     return { message: 'Error occurred', data: error.response?.data };

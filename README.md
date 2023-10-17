@@ -18,9 +18,13 @@ yarn dev
 - [x] Login
 - [x] Register
 - [ ] Profile
-- [ ] Catalog
+- [x] Catalog v1
+- [ ] Catalog v2
 - [x] Security Login
 - [x] Insert Book
+- [x] My Books Page
+- [x] Create Context
+- [x] Logout
 
 ## Team Members
 
@@ -51,3 +55,11 @@ This project it's using action as a method of comunication with the endpoins.
 
 Almost all compoments are using styled compoments
 [Style Compoments Website](https://styled-components.com/)
+
+### PRO TYPES
+
+Runtime type checking for React props and similar objects.
+
+You can use prop-types to document the intended types of properties passed to components. React (and potentially other libraries—see the checkPropTypes() reference below) will check props passed to your components against those definitions, and warn in development if they don’t match.
+
+[Prop Types](https://www.npmjs.com/package/prop-types)
