@@ -26,11 +26,17 @@ export const LinkNavbar = styled(Link)`
   }
 `;
 
-export const NameDisplay = styled.div`
+export const NameDisplay = styled.button`
   display: flex;
   justify-content: center;
   font-size: 25px;
   color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Paytone One', sans-serif;
+  cursor: pointer;
+
   &:hover {
     border-bottom: 2px solid red;
   }

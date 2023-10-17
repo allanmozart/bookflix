@@ -1,12 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Form = styled.div`
-  margin-top: 80px;
-  max-width: 700px;
-  height: 500px;
-  width: 700px;
+  height: 400px;
+  width: 600px;
   padding: 100px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.7);
 `;
 
 export const Title = styled.h1`
@@ -14,25 +12,30 @@ export const Title = styled.h1`
   color: white;
 `;
 
-export const NewProfileContainer = styled.div`
-  /* position: relative; */
-`;
-
 export const ProfileImage = styled.img`
-  max-width: 180px;
-  max-height: 180px;
-  min-height: 100px;
-  min-width: 100px;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   border-radius: 4px;
-  text-decoration: none;
   background-color: black;
-  background-image: url("src/assets/netflix-default-profile-picture.jpg");
-  margin-right: 15px;
+  background-image: url('src/assets/netflix-default-profile-picture.jpg');
 `;
 
 export const Input = styled.input`
   padding: 10px;
   background: rgba(61, 61, 61);
   color: white;
+  width: 350px;
+`;
+
+export const ProfileContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const ProfileImageContainer = styled.div`
+  padding: 20px;
+`;
+export const ProfileInputContainer = styled.div`
+  padding: 20px;
 `;

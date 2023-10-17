@@ -10,9 +10,15 @@ import { Logo } from '../Logo';
 import { getFirstName } from '../../utils/firstName';
 import { Logout } from '../Logout';
 import { useUser } from '../UserContext/User';
+import { useNavigate } from 'react-router-dom';
 
 function DefaultNavbar() {
   const { userData } = useUser();
+  const navigate = useNavigate();
+
+  const HandleProfile = () => {
+    navigate('/profile');
+  };
   return (
     <Navbar>
       <Link to="/">
@@ -24,12 +30,14 @@ function DefaultNavbar() {
       <NavbarContainer>
         <LinkNavbar to="/catalog">Catalog</LinkNavbar>
 
-        <LinkNavbar to="/mybooks">My Books</LinkNavbar>
+        <LinkNavbar to="/mybooks">My books</LinkNavbar>
 
-        <LinkNavbar to="/newbook">Insert New book</LinkNavbar>
+        <LinkNavbar to="/newbook">New book</LinkNavbar>
       </NavbarContainer>
       <ProfileDisplay>
-        <NameDisplay>{getFirstName(userData.name)}</NameDisplay>
+        <NameDisplay onClick={HandleProfile}>
+          {getFirstName(userData.name)}
+        </NameDisplay>
         <Logout />
       </ProfileDisplay>
     </Navbar>

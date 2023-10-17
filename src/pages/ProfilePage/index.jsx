@@ -1,23 +1,11 @@
-import { Link } from "react-router-dom";
-
-import { MainHeader } from "../../components/MainHeader";
-import { Logo } from "../../components/Logo";
-import { Profile } from "../../components/Profile";
-
+import { Profile } from '../../components/Profile';
+import DefaultNavbar from '../../components/DefaultNavbar';
+import { ProfilePageUi } from './style';
 export default function ProfilePage() {
-
-
   return (
-    <>
-      <MainHeader>
-        <Link to="/">
-          <Logo
-            src="https://fontmeme.com/permalink/231005/1bf0ab08da7c21a3ed063a6277666c66.png"
-            alt="Bookflix Logo"
-          />
-        </Link>
-      </MainHeader>
+    <ProfilePageUi>
+      <DefaultNavbar></DefaultNavbar>
       <Profile></Profile>
-    </>
+    </ProfilePageUi>
   );
 }

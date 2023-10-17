@@ -1,20 +1,38 @@
-import { DefaultButton } from "../buttons/style";
-import { Title, Form, ProfileImage, Input } from "./style";
+import { DefaultButton } from '../buttons/style';
+import {
+  Title,
+  Form,
+  ProfileImage,
+  Input,
+  ProfileContainer,
+  ProfileImageContainer,
+  ProfileInputContainer,
+} from './style';
 
 export const AddNewProfileModal = (closeModal) => {
   const handleCancel = () => {
     closeModal();
-  }
+  };
 
   return (
     <>
-      <Form style={{justifyContent: 'left'}}>
+      <Form style={{ justifyContent: 'left' }}>
         <Title>Add New Profile</Title>
-
-          <ProfileImage />
-          <Input placeholder="Name" required></Input>
-        <DefaultButton style={{ marginTop: '10px'  }}>Submit</DefaultButton>
-        <DefaultButton style={{ marginTop: '10px', backgroundColor:'grey' }} onClick={handleCancel}>Cancel</DefaultButton>
+        <ProfileContainer>
+          <ProfileImageContainer>
+            <ProfileImage />
+          </ProfileImageContainer>
+          <ProfileInputContainer>
+            <Input placeholder="Name" required></Input>
+          </ProfileInputContainer>
+        </ProfileContainer>
+        <DefaultButton>Submit</DefaultButton>
+        <DefaultButton
+          style={{ backgroundColor: 'grey' }}
+          onClick={handleCancel}
+        >
+          Cancel
+        </DefaultButton>
       </Form>
     </>
   );
