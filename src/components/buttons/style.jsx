@@ -46,9 +46,9 @@ export const LogoutButton = styled.button`
   font-family: 'Paytone One', sans-serif;
   border-radius: 4px;
   width: auto;
-  font-size: ${({ size }) => size || '14px'};
+  font-size: ${({ size }) => size || '16px'};
   font-weight: 400;
-  padding: 0px 15px;
+  padding: 15px 20px 18px 20px;
   display: flex;
   justify-content: center;
   align-items: center;

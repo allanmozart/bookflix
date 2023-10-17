@@ -30,7 +30,7 @@ export default function MyBooks() {
       <MyBookContainer>
         <Title>{userData.name}</Title>
         <Paragraph>Uploaded Books</Paragraph>
-        {loading ? <p>Loading...</p> : <MyBookList books={books} />}
+        {loading ? <Paragraph>Loading...</Paragraph> : <MyBookList books={books} />}
       </MyBookContainer>
     </>
   );

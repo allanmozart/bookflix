@@ -9,10 +9,20 @@ import {
 import { MainHeader } from "../../components/MainHeader";
 import { DefaultButton } from "../../components/Buttons/style";
 import { EmailInput } from "../../components/Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Logo } from "../../components/Logo";
+import { useEffect } from "react";
+import { userHasLogin } from "../../api/auth/login";
 
 export function LandingPage() {
+    const navigate = useNavigate();
+  useEffect(() => {
+    //criar if token in localStorage login  
+    if (userHasLogin()) {
+        navigate("/catalog");
+}
+    }, []); 
+  
   return (
     <LandingPageUi>
       <MainHeader>

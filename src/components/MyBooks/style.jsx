@@ -17,9 +17,10 @@ export const Title = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 30px;
-  font-weight: 400;
-  max-width: 600px;
-  font-family: 'Helvetica', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  font-size: 25px;
   color: white;
 `;

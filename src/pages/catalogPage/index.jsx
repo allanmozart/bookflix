@@ -1,37 +1,14 @@
-import { MainHeader } from '../../components/MainHeader';
-import { Page, Paragraph } from './style';
-import { Link } from 'react-router-dom';
-import { Logo } from '../../components/Logo';
+import { Page } from './style';
+
 import Catalog from '../../components/Catalog';
-import { DefaultButton } from '../../components/Buttons/style';
-import { useUser } from '../../components/UserContext/User';
-import { Logout } from '../../components/Logout';
+import DefaultNavbar from '../../components/DefaultNavbar';
 
 export default function CatalogPage() {
-  const { userData } = useUser();
-
   return (
     <>
-      <MainHeader>
-        <Link to="/">
-          <Logo
-            src="https://fontmeme.com/permalink/231005/1bf0ab08da7c21a3ed063a6277666c66.png"
-            alt="Bookflix Logo"
-          ></Logo>
-        </Link>
-
-        <DefaultButton style={{ margin: '10px' }} to="/newbook">
-          Insert New book
-        </DefaultButton>
-        <DefaultButton style={{ margin: '10px' }} to="/mybooks">
-          My Books
-        </DefaultButton>
-
-        <Logout></Logout>
-      </MainHeader>
-      <Paragraph>{userData.name}</Paragraph>
+      <DefaultNavbar />
       <Page>
-        <Catalog></Catalog>
+        <Catalog />
       </Page>
     </>
   );

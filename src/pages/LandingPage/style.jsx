@@ -49,11 +49,11 @@ export const Button = styled.button`
   size: 25px;
   margin-left: 15px;
   padding: 10px;
-  background-color: #FF0000;
+  background-color: #ff0000;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-family: sans-serif;
+
   width: 150px;
   cursor: pointer;
   text-align: center;

@@ -8,11 +8,19 @@ export function useUser() {
 }
 
 export function UserProvider({ children }) {
-  const [userData, setUserData] = useState({
-    id: null,
-    name: null,
-    email: null,
-    profile_picture: null,
+  const [userData, setUserData] = useState(() => {
+    const existingUser = localStorage.getItem('user');
+
+    if (existingUser) {
+      return JSON.parse(existingUser);
+    }
+
+    return {
+      id: null,
+      name: null,
+      email: null,
+      profile_picture: null,
+    };
   });
 
   const clearUserData = () => {
