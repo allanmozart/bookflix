@@ -8,6 +8,8 @@ import {
   BookCover,
   Paragraph,
   RecoveryImage,
+  BookContainer,
+  BookTextContainer,
 } from './style';
 import missingImage from '../../assets/missingImage.png';
 
@@ -42,25 +44,28 @@ export default function Catalog() {
           {Array.isArray(books) && books.length > 0 ? (
             books.map((book, bookIndex) => (
               <BookItem key={book.id}>
-                <BookCover
-                  onClick={() => setSelectedIndex(bookIndex)}
-                  data={book.book_cover}
-                  alt={`${book.title}cover`}
-                >
-                  <RecoveryImage src={missingImage} />
-                </BookCover>
-
-                {selectedIndex === bookIndex && (
-                  <>
-                    <h2 style={{ fontSize: '145%' }}>{book.title}</h2>
-                    <p>
-                      <b>Year:</b> {book.year}
-                    </p>
-                    <p>
-                      <b>Description:</b> {book.description}
-                    </p>
-                  </>
-                )}
+                <BookContainer>
+                  <BookCover
+                    onClick={() => setSelectedIndex(bookIndex)}
+                    data={book.book_cover}
+                    alt={`${book.title}cover`}
+                  >
+                    <RecoveryImage src={missingImage} />
+                  </BookCover>
+                </BookContainer>
+                <BookTextContainer>
+                  {selectedIndex === bookIndex && (
+                    <>
+                      <h2 style={{ fontSize: '145%' }}>{book.title}</h2>
+                      <p>
+                        <b>Year:</b> {book.year}
+                      </p>
+                      <p>
+                        <b>Description:</b> {book.description}
+                      </p>
+                    </>
+                  )}
+                </BookTextContainer>
               </BookItem>
             ))
           ) : (

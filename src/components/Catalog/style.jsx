@@ -13,9 +13,26 @@ export const BookList = styled.ul`
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 95%;
+  width: 75%;
   list-style: none;
   margin: 30px auto;
+`;
+
+export const BookContainer = styled.div`
+  height: 400px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const BookTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 30px;
+  height: 90px;
 `;
 
 export const BookItem = styled.li`
@@ -25,8 +42,7 @@ export const BookItem = styled.li`
   color: white;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.1);
-  width: 10%;
-  height: 65%;
+  width: 300px;
   margin: 3%;
 
   &:hover {

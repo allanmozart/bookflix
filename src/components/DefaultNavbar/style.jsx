@@ -31,11 +31,16 @@ export const NameDisplay = styled.div`
   justify-content: center;
   font-size: 25px;
   color: white;
+  &:hover {
+    border-bottom: 2px solid red;
+  }
 `;
 
 export const ProfileDisplay = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
   padding-right: 30px;
 `;
