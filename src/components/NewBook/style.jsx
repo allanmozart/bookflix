@@ -1,12 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const RegisterContainer = styled.div`
-  max-width: 50%;
+// Styled components for your login form
+export const NewBookContainter = styled.div`
+  margin-top: 80px;
+  max-width: 70%;
   margin: 75 auto;
-  padding: 40px;
+  padding: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const Title = styled.h1`
@@ -30,14 +33,14 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 10px;
-  background: transparent;
+
+  background-color: #00000094;
   width: 400px;
   color: white;
   border: 1px solid white;
-  display: flex;
-  padding-left: 40px;
+  text-align: center;
 
   &::placeholder {
     color: #ffffffb1;
@@ -45,34 +48,46 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
- margin-top: 20px;
+  margin-top: 20px;
   padding: 10px;
   background-color: #ff0000;
   color: #fff;
   border: none;
   border-radius: 4px;
+  font-family: sans-serif;
+  width: 150px;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     background-color: #790505;
   }
 `;
 
-export const RegisterStatus = styled.div`
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-  margin-top: 20px;
+export const TextArea = styled.textarea`
+  margin-top: 15px;
   padding: 10px;
-  background: transparent;
+  background-color: #00000094;
   width: 400px;
+  height: 150px;
   color: white;
   border: 1px solid white;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+
+  &::placeholder {
+    color: #ffffffb1;
+  }
 `;
 
-export const RegisterErrors = styled.ul`
-  list-style-type: none;
-  margin-bottom: 0px;
+export const Paragraph = styled.p`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  font-size: 30px;
+  font-weight: 400;
+  max-width: 400px;
+  font-family: 'Helvetica', sans-serif;
+  color: white;
 `;

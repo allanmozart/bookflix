@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const CatalogContainer = styled.div`
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-family: Arial, sans-serif;
-  display: flex;
   align-items: center;
 `;
 
@@ -12,25 +13,24 @@ export const BookList = styled.ul`
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 30px auto;
 `;
 
 export const BookItem = styled.li`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   color: white;
-  margin: 13px;
-  padding: 15px 0;
-  border: 1px solid rgba(200, 200, 200, 0.3);
-  border-radius: 5px;
   background-color: transparent;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  width: 20%;
+  height: 55%;
+  margin: 3%;
 
   &:hover {
     background-color: rgba(200, 200, 200, 0.4);
-
   }
 `;
 
@@ -40,16 +40,23 @@ export const Paragraph = styled.p`
   padding-top: 10px;
   flex-wrap: wrap;
   font-size: 25px;
-  font-weight: 400;
-  font-family: 'Helvetica', sans-serif;
   color: white;
 `;
 
-export const BookCover = styled.img`
-  width: 28%;
+export const BookCover = styled.object`
+  display: flex;
+  justify-content: center;
+  height: 320px;
 
   &:hover {
-    width: 29%;
+    height: 320px;
+  }
+`;
 
+export const RecoveryImage = styled.img`
+  height: 300px;
+
+  &:hover {
+    height: 320px;
   }
 `;

@@ -1,16 +1,19 @@
-import { Page, Paragraph } from "./style";
 import { Link } from "react-router-dom";
+import MyBooks from "../../components/MyBooks";
+import { RequireAuth } from "../../components/RequireAuth/RequireAuth";
+import { Page, Paragraph } from "./style";
 import { Logo } from "../../components/Logo";
-import Catalog from "../../components/Catalog";
-import { useUser } from "../../components/UserContext/User";
 import { Logout } from "../../components/Logout";
 import { Navbar, NavbarContainer, LinkNavbar } from "../../components/Navbar";
+import { useUser } from "../../components/UserContext/User";
 
 
-export default function CatalogPage() {
+export default function MyBooksPage() {
   const { userData } = useUser();
+  
   return (
-    <>
+    <Page>
+      <RequireAuth />
       <Navbar>
         <Link to="/">
           <Logo
@@ -29,9 +32,7 @@ export default function CatalogPage() {
         </NavbarContainer>
       </Navbar>
 
-      <Page>
-        <Catalog />
-      </Page>
-    </>
+      <MyBooks></MyBooks>
+    </Page>
   );
 }

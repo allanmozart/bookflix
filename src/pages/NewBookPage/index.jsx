@@ -1,16 +1,15 @@
-import { Page, Paragraph } from "./style";
-import { Link } from "react-router-dom";
 import { Logo } from "../../components/Logo";
-import Catalog from "../../components/Catalog";
-import { useUser } from "../../components/UserContext/User";
+import { Link } from "react-router-dom";
+import { Page, Paragraph } from "./style";
+import NewBook from "../../components/NewBook";
 import { Logout } from "../../components/Logout";
 import { Navbar, NavbarContainer, LinkNavbar } from "../../components/Navbar";
+import { useUser } from "../../components/UserContext/User";
 
-
-export default function CatalogPage() {
+export default function NewBookPage() {
   const { userData } = useUser();
   return (
-    <>
+    <Page>
       <Navbar>
         <Link to="/">
           <Logo
@@ -28,10 +27,7 @@ export default function CatalogPage() {
           <Logout />
         </NavbarContainer>
       </Navbar>
-
-      <Page>
-        <Catalog />
-      </Page>
-    </>
+      <NewBook></NewBook>
+    </Page>
   );
 }

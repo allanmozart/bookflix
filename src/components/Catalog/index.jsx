@@ -1,62 +1,73 @@
+import { useEffect, useState } from 'react';
 import { RequireAuth } from '../RequireAuth/RequireAuth';
-import { useState, useEffect } from 'react';
-import { bookUrl } from '../../helpers/urls';
+import getBooks from '../../api/book';
 import {
   BookList,
   BookItem,
   CatalogContainer,
-  Paragraph,
   BookCover,
+  Paragraph,
+  RecoveryImage,
 } from './style';
-import axios from 'axios';
+import missingImage from '../../assets/missingImage.png';
 
 export default function Catalog() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(bookUrl)
-      .then((response) => {
-        setBooks(response.data.data);
-        console.log(response.data);
+    async function fetchBooks() {
+      try {
+        const bookData = await getBooks();
+        setBooks(bookData.books);
         setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error('Error fetching books:', error);
         setLoading(false);
-      });
+      }
+    }
+
+    fetchBooks();
   }, []);
 
-  if (loading) {
-    return <Paragraph>Loading...</Paragraph>;
-  } else {
-    return (
-      <CatalogContainer>
-        <RequireAuth />
-        <Paragraph>Catalog</Paragraph>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <BookList>
-            {Array.isArray(books) && books.length > 0 ? (
-              books.map((book) => (
-                <BookItem key={book.id}>
-                  <h2 style={{ fontSize: "145%" }}>{book.title}</h2>
-                  <p>Year: {book.year}</p>
-                  <p>Description: {book.description}</p>
-                  <BookCover
-                    src={book.book_cover}
-                    alt={`${book.title}cover`}
-                  ></BookCover>
-                </BookItem>
-              ))
-            ) : (
-              <p>No books available.</p>
-            )}
-          </BookList>
-        )}
-      </CatalogContainer>
-    );
-  }
+  return (
+    <CatalogContainer>
+      <RequireAuth />
+
+      {loading ? (
+        <Paragraph>Loading...</Paragraph>
+      ) : (
+        <BookList>
+          {Array.isArray(books) && books.length > 0 ? (
+            books.map((book, bookIndex) => (
+              <BookItem key={book.id}>
+                <BookCover
+                  onClick={() => setSelectedIndex(bookIndex)}
+                  data={book.book_cover}
+                  alt={`${book.title}cover`}
+                >
+                  <RecoveryImage src={missingImage} />
+                </BookCover>
+
+                {selectedIndex === bookIndex && (
+                  <>
+                    <h2 style={{ fontSize: '145%' }}>{book.title}</h2>
+                    <p>
+                      <b>Year:</b> {book.year}
+                    </p>
+                    <p>
+                      <b>Description:</b> {book.description}
+                    </p>
+                  </>
+                )}
+              </BookItem>
+            ))
+          ) : (
+            <Paragraph>No books available.</Paragraph>
+          )}
+        </BookList>
+      )}
+    </CatalogContainer>
+  );
 }
