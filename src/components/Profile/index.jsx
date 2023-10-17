@@ -7,8 +7,8 @@ import {
   SelectProfileButton,
   Title,
 } from './style';
-import { AddNewProfileModal } from '../AddNewProfileModal';
-import { ProfileUpdate } from '../UpdateProfileModal';
+import { NewProfile } from '../NewProfile';
+import { ProfileUpdate } from '../UpdateProfile';
 import { useUser } from '../UserContext/User';
 import { getFirstName } from '../../utils/firstName';
 
@@ -49,9 +49,7 @@ export function Profile() {
           </ProfileList>
         </div>
       )}
-      {addProfile && (
-        <AddNewProfileModal closeModal={() => setAddProfile(false)} />
-      )}
+      {addProfile && <NewProfile closeModal={() => setAddProfile(false)} />}
       {showUpdateProfile && (
         <ProfileUpdate closeModal={() => setShowUpdateProfile(false)} />
       )}

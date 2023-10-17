@@ -9,7 +9,7 @@ import {
   ProfileInputContainer,
 } from './style';
 
-export const AddNewProfileModal = (closeModal) => {
+export const NewProfile = (closeModal) => {
   const handleCancel = () => {
     closeModal();
   };

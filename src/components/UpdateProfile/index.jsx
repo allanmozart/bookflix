@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAuthToken } from '../../api/auth/login';
 import { DefaultButton } from '../buttons/style';
-import { Form, ProfileImage } from '../AddNewProfileModal/style';
+import { Form, ProfileImage } from '../NewProfile/style';
 import {
   ButtonContainer,
   EmailInput,
@@ -29,7 +29,6 @@ export function ProfileUpdate(closeModal) {
     async function getProfile() {
       const userToken = setToken(getAuthToken());
       const response = await profile(userToken);
-      console.log(response.data.data);
       setName(response.data.data.name);
       setEmail(response.data.data.email);
       setProfileImage(response.data.data.profile_picture);
