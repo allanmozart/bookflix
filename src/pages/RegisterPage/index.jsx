@@ -3,7 +3,7 @@ import { MainHeader } from '../../components/MainHeader';
 import { Register } from '../../components/Register';
 import { Page } from './style';
 import { Logo } from '../../components/Logo';
-import { DefaultButton } from '../../components/Buttons/style';
+import { DefaultButton } from '../../components/buttons/style';
 
 export default function RegisterPage() {
   return (

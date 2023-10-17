@@ -8,7 +8,6 @@ export default function MyBooksPage() {
     <Page>
       <RequireAuth />
       <DefaultNavbar></DefaultNavbar>
-
       <MyBooks></MyBooks>
     </Page>
   );

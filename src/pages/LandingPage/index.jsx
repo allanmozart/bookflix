@@ -5,24 +5,24 @@ import {
   LadingPage,
   Paragraph,
   Title,
-} from "./style";
-import { MainHeader } from "../../components/MainHeader";
-import { DefaultButton } from "../../components/Buttons/style";
-import { EmailInput } from "../../components/Input";
-import { Link, useNavigate } from "react-router-dom";
-import { Logo } from "../../components/Logo";
-import { useEffect } from "react";
-import { userHasLogin } from "../../api/auth/login";
+} from './style';
+import { MainHeader } from '../../components/MainHeader';
+import { EmailInput } from '../../components/Input';
+import { Link, useNavigate } from 'react-router-dom';
+import { Logo } from '../../components/Logo';
+import { useEffect } from 'react';
+import { userHasLogin } from '../../api/auth/login';
+import { DefaultButton } from '../../components/buttons/style';
 
 export function LandingPage() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
-    //criar if token in localStorage login  
+    //criar if token in localStorage login
     if (userHasLogin()) {
-        navigate("/catalog");
-}
-    }, []); 
-  
+      navigate('/catalog');
+    }
+  }, []);
+
   return (
     <LandingPageUi>
       <MainHeader>
@@ -32,7 +32,7 @@ export function LandingPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
-        <DefaultButton style={{ margin: "10px" }} to="/login">
+        <DefaultButton style={{ margin: '10px' }} to="/login">
           Sign In
         </DefaultButton>
       </MainHeader>

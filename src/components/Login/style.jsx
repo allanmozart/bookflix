@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const LoginContainer = styled.div`
-  margin-top: 80px;
-  max-width: 700px;
+  margin-top: 70px;
+  max-width: 800px;
   margin: 75 auto;
-  padding: 65px;
+  padding: 80px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.h2`
@@ -22,6 +26,7 @@ export const Form = styled.form`
 export const Input = styled.input`
   margin-top: 15px;
   padding: 10px;
+  width: 250px;
   background: rgba(61, 61, 61);
   color: white;
 `;
