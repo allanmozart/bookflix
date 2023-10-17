@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CatalogContainer = styled.div`
   display: flex;
@@ -19,50 +19,28 @@ export const BookList = styled.ul`
 `;
 
 export const BookContainer = styled.div`
-  height: 400px;
+  height: 300px;
   width: 300px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  margin: auto;
   flex-direction: column;
-`;
-
-export const BookTextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-top: 30px;
-  height: 90px;
 `;
 
 export const BookItem = styled.li`
   display: flex;
-  justify-content: center;
+  justify-items: center;
   flex-direction: column;
   color: white;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.1);
-  width: 300px;
-  margin: 3%;
-
-  &:hover {
-    background-color: rgba(200, 200, 200, 0.4);
-  }
-`;
-
-export const Paragraph = styled.p`
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  flex-wrap: wrap;
-  font-size: 25px;
-  color: white;
+  width: 400px;
+  margin: 20px 70px;
+  padding-top: 30px;
 `;
 
 export const BookCover = styled.object`
-  display: flex;
-  justify-content: center;
-  height: 320px;
+  height: 300px;
 
   &:hover {
     height: 320px;
@@ -75,4 +53,22 @@ export const RecoveryImage = styled.img`
   &:hover {
     height: 320px;
   }
+`;
+
+export const BookTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 250px;
+  margin-top: 10px;
+`;
+
+export const Paragraph = styled.p`
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: white;
+  flex-wrap: wrap;
+  font-size: 25px;
+  font-family: 'Paytone One';
 `;
