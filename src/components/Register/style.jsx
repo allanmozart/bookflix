@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const RegisterContainer = styled.div`
   max-width: 50%;
@@ -45,12 +45,13 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
- margin-top: 20px;
+  margin-top: 20px;
   padding: 10px;
   background-color: #ff0000;
   color: #fff;
   border: none;
   border-radius: 4px;
+  font-size: 20px;
   cursor: pointer;
 
   &:hover {

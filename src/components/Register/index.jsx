@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '../Icons/style';
 import {
@@ -12,17 +12,25 @@ import {
   RegisterErrors,
 } from './style';
 import { register } from '../../api/auth/register';
-import { verifyUser } from '../../api/auth/login';
+import { userHasLogin, verifyUser } from '../../api/auth/login';
 import { Paragraph } from '../../pages/LoginPage/style';
 
 export function Register() {
   const [email, setEmail] = useState(
     new URLSearchParams(document.location.search).get('email')
+      ? new URLSearchParams(document.location.search).get('email')
+      : ''
   );
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const navigate = useNavigate();
   const [registrationStatus, setRegistrationStatus] = useState([]);
+
+  useEffect(() => {
+    if (userHasLogin()) {
+      navigate('/catalog');
+    }
+  });
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);

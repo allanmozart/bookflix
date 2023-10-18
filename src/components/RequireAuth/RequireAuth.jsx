@@ -6,7 +6,7 @@ export const RequireAuth = () => {
   const navigate = useNavigate();
   const token = getAuthToken();
   useEffect(() => {
-    if (token === null) {
+    if (!token) {
       navigate('/login');
     }
   }, [token, navigate]);

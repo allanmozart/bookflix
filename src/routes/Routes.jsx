@@ -4,6 +4,7 @@ import { LandingPage } from '../pages/LandingPage';
 import CatalogPage from '../pages/CatalogPage';
 import RegisterPage from '../pages/RegisterPage';
 import NewBookPage from '../pages/NewBookPage';
+import ProfilePage from '../pages/ProfilePage';
 import MyBooksPage from '../pages/MyBooksPage';
 import { UserProvider } from '../components/UserContext/User';
 import { ErrorPage } from '../pages/Error';
@@ -19,6 +20,7 @@ export const AllRoutes = () => {
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/newbook" element={<NewBookPage />} />
           <Route path="/mybooks" element={<MyBooksPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </UserProvider>

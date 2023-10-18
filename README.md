@@ -17,9 +17,9 @@ yarn dev
 - [x] Landing Page
 - [x] Login
 - [x] Register
-- [ ] Profile
+- [x] Profile
 - [x] Catalog v1
-- [ ] Catalog v2
+- [x] Catalog v2
 - [x] Security Login
 - [x] Insert Book
 - [x] My Books Page

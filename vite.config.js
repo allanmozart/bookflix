@@ -10,6 +10,10 @@ export default defineConfig({
         target: 'http://5.22.217.225:8081',
         changeOrigin: true,
       },
+      '/api/v1/user/profile': {
+        target: 'http://5.22.217.225:8081',
+        changeOrigin: true,
+      },
     },
   },
 });

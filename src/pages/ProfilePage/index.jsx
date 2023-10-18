@@ -1,14 +1,13 @@
-import MyBooks from '../../components/MyBooks';
+import { Profile } from '../../components/Profile';
 import DefaultNavbar from '../../components/DefaultNavbar';
+import { ProfilePageUi } from './style';
 import { RequireAuth } from '../../components/RequireAuth/RequireAuth';
-import { Page } from './style';
-
-export default function MyBooksPage() {
+export default function ProfilePage() {
   return (
-    <Page>
+    <ProfilePageUi>
       <RequireAuth />
       <DefaultNavbar></DefaultNavbar>
-      <MyBooks></MyBooks>
-    </Page>
+      <Profile></Profile>
+    </ProfilePageUi>
   );
 }
