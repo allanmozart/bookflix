@@ -2,7 +2,7 @@
 
 # Bookflix
 
-This project it was developed during the Mindera Frontend Bootcamp at 2023.
+This project was developed during the Mindera Frontend Bootcamp at 2023.
 The idea is to create a page inspired on Netflix layout but interacting with a book API.
 
 ## How to run
@@ -47,7 +47,7 @@ Currently, two official plugins are available:
 
 ### AXIOS
 
-This project it's using action as a method of comunication with the endpoins.
+This project is using action as a method of comunication with the endpoins.
 
 - [Axios Oficial Page](https://axios-http.com/docs/intro)
 
