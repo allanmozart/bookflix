@@ -44,7 +44,7 @@ export default function NewBook() {
     } else {
       const yearInt = parseInt(year, 10);
       insertBook(title, description, yearInt, bookCover);
-      navigate('/catalog');
+      navigate('/mybooks');
     }
   };
 
