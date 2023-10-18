@@ -16,7 +16,10 @@ export default function RegisterPage() {
               alt="Bookflix Logo"
             ></Logo>
           </Link>
-          <DefaultButton style={{ margin: '10px' }} to="/login">
+          <DefaultButton
+            style={{ marginRight: '55px', padding: '5px 15px 5px 15px' }}
+            to="/login"
+          >
             Sign In
           </DefaultButton>
         </MainHeader>

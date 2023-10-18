@@ -3,6 +3,7 @@ import Login from '../../components/Login';
 import { Page } from './style';
 import { Link } from 'react-router-dom';
 import { Logo } from '../../components/Logo';
+import { DefaultButton } from '../../components/buttons/style';
 
 export default function LoginPage() {
   return (
@@ -14,6 +15,12 @@ export default function LoginPage() {
             alt="Bookflix Logo"
           ></Logo>
         </Link>
+        <DefaultButton
+          style={{ marginRight: '55px', padding: '5px 15px 5px 15px' }}
+          to="/register"
+        >
+          Sign Up
+        </DefaultButton>
       </MainHeader>
       <Page>
         <Login></Login>
