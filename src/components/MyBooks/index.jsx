@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MyBookContainer, Paragraph, Title } from './style';
+import { MyBookContainer, Paragraph } from './style';
 import { getMyBooks } from '../../api/book';
 import { MyBookList } from '../MyBookList';
 import { useUser } from '../../components/UserContext/User';
@@ -28,9 +28,11 @@ export default function MyBooks() {
   return (
     <>
       <MyBookContainer>
-        <Title>{userData.name}</Title>
-        <Paragraph>Uploaded Books</Paragraph>
-        {loading ? <Paragraph>Loading...</Paragraph> : <MyBookList books={books} />}
+        {loading ? (
+          <Paragraph>Loading...</Paragraph>
+        ) : (
+          <MyBookList books={books} />
+        )}
       </MyBookContainer>
     </>
   );
