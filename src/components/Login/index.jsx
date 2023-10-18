@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Button,
   Form,
@@ -7,7 +7,7 @@ import {
   NoAccountContainer,
   Title,
 } from './style';
-import { verifyUser } from '../../api/auth/login';
+import { userHasLogin, verifyUser } from '../../api/auth/login';
 import { Paragraph } from '../../pages/LoginPage/style';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../UserContext/User';
@@ -18,6 +18,12 @@ function Login() {
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
   const { setUserData, userData } = useUser();
+
+  useEffect(() => {
+    if (userHasLogin()) {
+      navigate('/catalog');
+    }
+  });
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);

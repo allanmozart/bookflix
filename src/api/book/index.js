@@ -1,8 +1,8 @@
-import axios from "axios";
-import { getAuthToken } from "../auth/login";
-import { ENDPOINT } from "../../utils/urls";
+import axios from 'axios';
+import { getAuthToken } from '../auth/login';
+import { ENDPOINT } from '../../utils/urls';
 
-export async function insertBook(title, description, year, bookCover) {
+export async function insertBook(title, description, year, bookCover = null) {
   const token = getAuthToken();
   const bookBody = {
     title,
@@ -17,10 +17,10 @@ export async function insertBook(title, description, year, bookCover) {
         Authorization: token,
       },
     });
-    return { message: "OK", data: response.data };
+    return { message: 'OK', data: response.data };
   } catch (error) {
     return {
-      message: "Error occurred",
+      message: 'Error occurred',
       data: error.response.data.errors,
     };
   }
@@ -35,7 +35,7 @@ export async function getMyBooks(id) {
       loading: false,
     };
   } catch (error) {
-    console.error("Error fetching books:", error);
+    console.error('Error fetching books:', error);
   }
 }
 
@@ -45,6 +45,6 @@ export default async function getBooks() {
 
     return { books: response.data.data, loading: false };
   } catch (error) {
-    console.error("Error fetching books:", error);
+    console.error('Error fetching books:', error);
   }
 }
