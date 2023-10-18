@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // Styled components for your login form
 export const NewBookContainter = styled.div`
-  margin-top: 80px;
+  margin-top: 20px;
   max-width: 70%;
   margin: 75 auto;
   padding: 65px;
@@ -15,8 +15,9 @@ export const NewBookContainter = styled.div`
 export const Title = styled.h1`
   text-align: start;
   color: #ffffffee;
-  font-size: 70px;
+  font-size: 50px;
   text-align: center;
+  margin: 0px;
 `;
 
 export const Form = styled.form`
@@ -54,7 +55,8 @@ export const Button = styled.button`
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-family: sans-serif;
+  font-family: "Paytone One", sans-serif;
+  font-size: 16px;
   width: 150px;
   cursor: pointer;
   text-align: center;
@@ -73,7 +75,7 @@ export const TextArea = styled.textarea`
   color: white;
   border: 1px solid white;
   text-align: center;
-
+  font-family: Arial, sans-serif;
   &::placeholder {
     color: #ffffffb1;
   }
@@ -88,6 +90,6 @@ export const Paragraph = styled.p`
   font-size: 30px;
   font-weight: 400;
   max-width: 400px;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Paytone One', sans-serif;
   color: white;
 `;

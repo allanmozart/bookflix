@@ -32,3 +32,20 @@ export const Paragraph = styled.p`
   font-size: 25px;
   color: white;
 `;
+
+export const Button = styled.button`
+  margin: 0px 10px;
+  padding: 10px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Paytone One", sans-serif;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: #790505;
+  }
+`;

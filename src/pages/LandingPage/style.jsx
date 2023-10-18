@@ -58,6 +58,7 @@ export const Button = styled.button`
   width: 150px;
   cursor: pointer;
   text-align: center;
+  font-family: "Paytone One", sans-serif;
   &:hover {
     background-color: #790505;
   }

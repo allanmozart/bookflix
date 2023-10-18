@@ -12,13 +12,15 @@ export const MyBookContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 70px;
+  font-size: 50px;
+  margin: 0px;
   color: #ffffffee;
 `;
 
 export const Paragraph = styled.p`
   display: flex;
   justify-content: center;
+  margin: 10px 0px;
   padding-top: 10px;
   flex-wrap: wrap;
   font-size: 25px;
