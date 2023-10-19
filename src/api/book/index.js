@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getAuthToken } from '../auth/login';
 import { ENDPOINT } from '../../utils/urls';
 
-export async function insertBook(title, description, year, bookCover) {
+export async function insertBook(title, description, year, bookCover = null) {
   const token = getAuthToken();
   const bookBody = {
     title,

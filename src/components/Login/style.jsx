@@ -39,7 +39,8 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-
+  font-family: "Paytone One", sans-serif;
+  font-size: 16px;
   &:hover {
     background-color: #790505;
   }

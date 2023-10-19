@@ -10,7 +10,7 @@ export const Title = styled.h1`
   font-size: 3.5vw;
   font-weight: 400;
   width: 100%;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Paytone One', sans-serif;
   color: white;
   align-content: end;
   text-align: center;

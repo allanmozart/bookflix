@@ -14,6 +14,7 @@ export const Title = styled.h1`
   color: #ffffffee;
   font-size: 70px;
   text-align: center;
+  margin: 10px;
 `;
 
 export const Form = styled.form`
@@ -53,7 +54,7 @@ export const Button = styled.button`
   border-radius: 4px;
   font-size: 20px;
   cursor: pointer;
-
+  font-family: "Paytone One", sans-serif;
   &:hover {
     background-color: #790505;
   }

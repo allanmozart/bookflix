@@ -4,9 +4,11 @@ import {
   BookList,
   Paragraph,
   RecoveryImage,
-} from "../MyBookList/style";
-import PropTypes from "prop-types";
-import missingImage from "../../assets/missingImage.png"
+  Button,
+  ButtonContainer,
+} from '../MyBookList/style';
+import PropTypes from 'prop-types';
+import missingImage from '../../assets/missingImage.png';
 
 export function MyBookList({ books }) {
   return (
@@ -17,6 +19,11 @@ export function MyBookList({ books }) {
             <BookCover data={book.book_cover} alt={`${book.title} cover`}>
               <RecoveryImage src={missingImage} />
             </BookCover>
+            <div></div>
+            <ButtonContainer>
+              <Button>UPDATE</Button>
+              <Button>DELETE</Button>
+            </ButtonContainer>
           </BookItem>
         ))
       ) : (
@@ -27,7 +34,8 @@ export function MyBookList({ books }) {
 }
 
 MyBookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
       id: PropTypes.number.isRequired,
       book_cover: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
